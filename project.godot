@@ -15,6 +15,11 @@ run/main_scene="uid://gd8myrclsxog"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*uid://2ilb0drmc3rv"
+SoundBus="*uid://wtv5oihsn4d7"
+
 [input]
 
 Jump={
