@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b4kd8jpiem1mp"]
+
+[ext_resource type="Script" uid="uid://ibl1cucnaa0i" path="res://scripts/player/player.gd" id="1_8afob"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7p2l"]
+height = 40.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8afob"]
+
+[node name="Player" type="CharacterBody2D" unique_id=609366961]
+script = ExtResource("1_8afob")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1379990267]
+offset_left = -12.0
+offset_top = -20.0
+offset_right = 12.0
+offset_bottom = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=472625382]
+shape = SubResource("CapsuleShape2D_x7p2l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1219332059]
+sprite_frames = SubResource("SpriteFrames_8afob")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1477387889]
