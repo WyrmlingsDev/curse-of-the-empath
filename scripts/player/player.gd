@@ -2,12 +2,14 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var speed = 300.0
+@export var speed = 800.0
 @export var max_health = 100.0
 @export var current_health = 100.0
 @export var i_frame = 800.0
 @export var i_frame_timer = 0.0
-@export var jump = -300.0
+@export var jump = -600.0
+
+@onready var animation = $AnimatedSprite2D
 
 var state: PlayerState
 var states: Dictionary[Variant, Variant] = {}
