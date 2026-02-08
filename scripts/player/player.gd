@@ -40,6 +40,11 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	if facing_direction == Vector2.LEFT:
+		animation.flip_h = true
+	elif facing_direction == Vector2.RIGHT:
+		animation.flip_h = false
+
 	state.physics_update(delta)
 	move_and_slide()
 

@@ -1,13 +1,16 @@
 extends PlayerState
 
 class_name PlayerMoveState
-		
+
+func enter(prev_state: PlayerState) -> void:
+	player.animation.play("walk")
+
 func physics_update(delta: float) -> void:
 	var x = Input.get_axis("Left", "Right")
 	
 	if x < 0:
 		player.facing_direction = Vector2.LEFT
-	else:
+	elif x > 0:
 		player.facing_direction = Vector2.RIGHT 
 		
 	player.velocity.x = x * player.speed

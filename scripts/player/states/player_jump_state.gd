@@ -10,7 +10,7 @@ func physics_update(delta: float) -> void:
 	
 	if x < 0:
 		player.facing_direction = Vector2.LEFT
-	else:
+	elif x > 0:
 		player.facing_direction = Vector2.RIGHT 
 		
 	player.velocity.x = x * player.speed

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ibl1cucnaa0i" path="res://scripts/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://bxrn3nprkaff3" path="res://assets/sprite/Vampire-Idle.png" id="2_dovo2"]
 [ext_resource type="Texture2D" uid="uid://b2kdm5j3x14cc" path="res://assets/sprite/Vampire-Ranged.png" id="3_gmlin"]
+[ext_resource type="Texture2D" uid="uid://das2abfyhhyxd" path="res://assets/sprite/Vampire-Walk.png" id="4_lvxji"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7p2l"]
 radius = 78.0
@@ -44,6 +45,38 @@ region = Rect2(3840, 0, 1920, 1920)
 atlas = ExtResource("3_gmlin")
 region = Rect2(5760, 0, 1920, 1920)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm80t"]
+atlas = ExtResource("4_lvxji")
+region = Rect2(0, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx1jg"]
+atlas = ExtResource("4_lvxji")
+region = Rect2(1920, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugbui"]
+atlas = ExtResource("4_lvxji")
+region = Rect2(3840, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcs02"]
+atlas = ExtResource("4_lvxji")
+region = Rect2(5760, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myrg7"]
+atlas = ExtResource("4_lvxji")
+region = Rect2(7680, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvlxm"]
+atlas = ExtResource("4_lvxji")
+region = Rect2(0, 1920, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf5tr"]
+atlas = ExtResource("4_lvxji")
+region = Rect2(1920, 1920, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgqa7"]
+atlas = ExtResource("4_lvxji")
+region = Rect2(3840, 1920, 1920, 1920)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8afob"]
 animations = [{
 "frames": [{
@@ -82,6 +115,35 @@ animations = [{
 "loop": false,
 "name": &"ranged",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm80t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx1jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugbui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcs02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myrg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvlxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf5tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgqa7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=609366961]
@@ -102,8 +164,8 @@ shape = SubResource("CapsuleShape2D_x7p2l")
 position = Vector2(82, -128)
 scale = Vector2(0.28, 0.301)
 sprite_frames = SubResource("SpriteFrames_8afob")
-animation = &"ranged"
-autoplay = "idle"
+animation = &"idle"
+autoplay = "walk"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1477387889]
 position = Vector2(307, -114)
