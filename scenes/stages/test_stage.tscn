@@ -1,23 +1,31 @@
 [gd_scene format=3 uid="uid://gd8myrclsxog"]
 
 [ext_resource type="PackedScene" uid="uid://b4kd8jpiem1mp" path="res://scenes/player/player.tscn" id="1_78alf"]
+[ext_resource type="PackedScene" uid="uid://cpp648uo7nv55" path="res://scenes/enemy/soldier.tscn" id="2_u63yl"]
+[ext_resource type="PackedScene" uid="uid://c0jpw6a8jg5y5" path="res://scenes/enemy/mage.tscn" id="3_8kaqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u63yl"]
-size = Vector2(1893, 38)
+size = Vector2(4701, 72)
 
 [node name="TestStage" type="Node2D" unique_id=1205755505]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=811689019]
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=402775133]
-offset_left = -606.0
-offset_right = 947.0
-offset_bottom = 247.0
+offset_left = -1966.0
+offset_right = 2746.0
+offset_bottom = 384.0
 color = Color(0.76710373, 0.5482249, 0.18740585, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1332790560]
-position = Vector2(245.5, 19)
+position = Vector2(394.5, 36)
 shape = SubResource("RectangleShape2D_u63yl")
 
 [node name="Player" parent="." unique_id=609366961 instance=ExtResource("1_78alf")]
-position = Vector2(158, -207)
+position = Vector2(-1480, -237)
+
+[node name="Soldier" parent="." unique_id=1632559621 instance=ExtResource("2_u63yl")]
+position = Vector2(-314, -267)
+
+[node name="Mage" parent="." unique_id=132183136 instance=ExtResource("3_8kaqf")]
+position = Vector2(826, -232)

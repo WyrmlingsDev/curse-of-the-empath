@@ -146,7 +146,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=609366961]
+[node name="Player" type="CharacterBody2D" unique_id=609366961 groups=["Player"]]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_8afob")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1379990267]
@@ -162,7 +164,7 @@ shape = SubResource("CapsuleShape2D_x7p2l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1219332059]
 position = Vector2(82, -128)
-scale = Vector2(0.28, 0.301)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_8afob")
 animation = &"idle"
 autoplay = "walk"
