@@ -169,5 +169,5 @@ sprite_frames = SubResource("SpriteFrames_8afob")
 animation = &"idle"
 autoplay = "walk"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1477387889]
-position = Vector2(307, -114)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1990501384]
+position = Vector2(449, -176)

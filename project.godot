@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 EventBus="*uid://2ilb0drmc3rv"
 SoundBus="*uid://wtv5oihsn4d7"
 
+[display]
+
+window/size/viewport_width=1980
+window/size/viewport_height=1080
+
 [global_group]
 
 Player=""

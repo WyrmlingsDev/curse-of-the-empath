@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://11f0efq5u1qh"]
+
+[ext_resource type="Texture2D" uid="uid://cqlvwkmwkc366" path="res://assets/img/Forest_ground (1).png" id="1_blo14"]
+
+[node name="Floor" type="TextureRect" unique_id=1468138007]
+offset_left = -1896.0
+offset_top = -644.0
+offset_right = 1895.0
+offset_bottom = 644.0
+texture = ExtResource("1_blo14")
