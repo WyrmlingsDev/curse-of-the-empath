@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0jpw6a8jg5y5" path="res://scenes/enemy/mage.tscn" id="3_8kaqf"]
 [ext_resource type="Texture2D" uid="uid://dfxo3rk48hpuj" path="res://assets/img/FINALparalax_2.png" id="3_day66"]
 [ext_resource type="PackedScene" uid="uid://11f0efq5u1qh" path="res://assets/img/floor.tscn" id="3_txm6t"]
+[ext_resource type="PackedScene" uid="uid://bl8m8f80yg8rf" path="res://scenes/enemy/boss.tscn" id="9_q0aiw"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_day66"]
 scenes/1/scene = ExtResource("3_txm6t")
@@ -86,13 +87,16 @@ tile_set = SubResource("TileSet_v3f42")
 position = Vector2(-960, 719)
 
 [node name="Soldier" parent="." unique_id=1632559621 instance=ExtResource("2_u63yl")]
-position = Vector2(2261, 284)
+position = Vector2(4960, 392)
 
 [node name="Mage" parent="." unique_id=132183136 instance=ExtResource("3_8kaqf")]
-position = Vector2(3508, 399)
+position = Vector2(6246, 379)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1224698481]
 position = Vector2(0, 953)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1450979854]
 shape = SubResource("WorldBoundaryShape2D_txm6t")
+
+[node name="Boss" parent="." unique_id=1292884064 instance=ExtResource("9_q0aiw")]
+position = Vector2(452, 566)

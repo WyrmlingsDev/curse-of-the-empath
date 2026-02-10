@@ -18,6 +18,9 @@ var state: EnemyState
 var states: Dictionary[Variant, Variant] = {}
 var facing_direction: Vector2 = Vector2.ZERO
 
+var attack_timer := 0
+const ATTACK_DELAY := 200.0
+
 func _set_state(state_name) -> void:
 	if not states.has(state_name):
 		push_warning("State '%s' not found" % state_name)
