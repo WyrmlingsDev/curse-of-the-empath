@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dfxo3rk48hpuj" path="res://assets/img/FINALparalax_2.png" id="3_day66"]
 [ext_resource type="PackedScene" uid="uid://11f0efq5u1qh" path="res://assets/img/floor.tscn" id="3_txm6t"]
 [ext_resource type="PackedScene" uid="uid://bl8m8f80yg8rf" path="res://scenes/enemy/boss.tscn" id="9_q0aiw"]
+[ext_resource type="PackedScene" uid="uid://x8rv0jbr2mxx" path="res://scenes/enemy/wolf.tscn" id="10_hb3ta"]
+[ext_resource type="PackedScene" uid="uid://bylgk8mpv4doq" path="res://scenes/enemy/demon.tscn" id="11_3hmmc"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_day66"]
 scenes/1/scene = ExtResource("3_txm6t")
@@ -100,3 +102,9 @@ shape = SubResource("WorldBoundaryShape2D_txm6t")
 
 [node name="Boss" parent="." unique_id=1292884064 instance=ExtResource("9_q0aiw")]
 position = Vector2(3700, -871)
+
+[node name="Wolf" parent="." unique_id=994881963 instance=ExtResource("10_hb3ta")]
+position = Vector2(1172, 702)
+
+[node name="Demon" parent="." unique_id=729504127 instance=ExtResource("11_3hmmc")]
+position = Vector2(2049, 680)
