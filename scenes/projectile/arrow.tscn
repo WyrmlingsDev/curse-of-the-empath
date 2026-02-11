@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dbtw30u33itxq"]
+
+[ext_resource type="Texture2D" uid="uid://16uj3fpdg2a0" path="res://assets/sprite/Crossbow_bolt.png" id="1_6rnvi"]
+[ext_resource type="Script" uid="uid://ccgbpexqkxxfa" path="res://scripts/projectile/arrow.gd" id="2_16qm4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rnvi"]
+radius = 8.0
+height = 96.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16qm4"]
+radius = 12.0
+height = 202.0
+
+[node name="Arrow" type="CharacterBody2D" unique_id=1487298717]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_16qm4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=662168588]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6rnvi")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1763045032]
+position = Vector2(4, 4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_6rnvi")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=93471675 groups=["Player", "PlayerDamageSource"]]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1980892379]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_16qm4")
+debug_color = Color(0.99757606, 0, 0.17293069, 0.41960785)
