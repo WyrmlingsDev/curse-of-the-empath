@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c8wnaf1t5u0nu"]
+
+[ext_resource type="FontFile" uid="uid://ca8ssrj5agog0" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_lblfi"]
+
+[sub_resource type="Theme" id="Theme_qosa4"]
+default_font = ExtResource("1_lblfi")
+default_font_size = 36
+
+[sub_resource type="Animation" id="Animation_3gnio"]
+resource_name = "play_dialogue"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6rp3"]
+_data = {
+&"play_dialogue": SubResource("Animation_3gnio")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=198018426]
+
+[node name="Panel" type="Panel" parent="." unique_id=902228132]
+anchors_preset = -1
+anchor_top = 0.687
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="character_name" type="RichTextLabel" parent="Panel" unique_id=284041786]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.01
+anchor_right = 0.85
+anchor_bottom = 0.14
+grow_horizontal = 0
+theme = SubResource("Theme_qosa4")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Maeve Sanguina"
+
+[node name="character_dialogue" type="RichTextLabel" parent="Panel" unique_id=1245692225]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.175
+anchor_right = 0.85
+anchor_bottom = 0.9
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1616978385]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345789796]
+libraries/ = SubResource("AnimationLibrary_n6rp3")
