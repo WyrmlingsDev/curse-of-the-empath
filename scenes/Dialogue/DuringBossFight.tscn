@@ -1,18 +1,18 @@
-[gd_scene format=3 uid="uid://c8wnaf1t5u0nu"]
+[gd_scene format=3 uid="uid://dhcb8a5bolgjr"]
 
-[ext_resource type="FontFile" uid="uid://ca8ssrj5agog0" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_lblfi"]
-[ext_resource type="FontFile" uid="uid://kohau8t3usea" path="res://assets/Fonts/caslon-antique.regular.ttf" id="2_0oe06"]
+[ext_resource type="FontFile" uid="uid://ca8ssrj5agog0" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_qhrbu"]
+[ext_resource type="FontFile" uid="uid://kohau8t3usea" path="res://assets/Fonts/caslon-antique.regular.ttf" id="2_delu2"]
 
 [sub_resource type="Theme" id="Theme_qosa4"]
-default_font = ExtResource("1_lblfi")
+default_font = ExtResource("1_qhrbu")
 default_font_size = 50
 
 [sub_resource type="Theme" id="Theme_ktec3"]
-default_font = ExtResource("2_0oe06")
+default_font = ExtResource("2_delu2")
 default_font_size = 45
 
 [sub_resource type="Animation" id="Animation_qhrbu"]
-length = 0.001
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -20,10 +20,10 @@ tracks/0/path = NodePath("Panel/character_dialogue:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["THAT POWER IS NOT YOURS TO HAVE."]
+"values": ["THAT POWER IS NOT YOURS TO HAVE.", "I AM LADY MAEVE SANGUINA OF CLAN MOORE, AND I WILL NOT BE BESTED BE YOU!"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -32,10 +32,10 @@ tracks/1/path = NodePath("Panel/character_name:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": ["Maeve Sanguina"]
+"values": ["Maeve Sanguina", "Maeve Sanguina"]
 }
 
 [sub_resource type="Animation" id="Animation_3gnio"]
@@ -48,22 +48,10 @@ tracks/0/path = NodePath("Panel/character_dialogue:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": ["What are you doing?", "Unhand me!", "YOU CANT DO THIS, YOU’LL DIE TOO, ARE YOU TOO STUPID TO REALIZE THAT?", "and it felt like a weight was lifted off my chest, knowing they’d never see me like this.", "It’s a beautiful morning out,", "but you know me too well Feyore….", "I’m going to sleep through it."]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel/character_name:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 3, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": ["Maeve Sanguina", "Maeve Sanguina", "Vampire", "Vampire"]
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n6rp3"]
@@ -109,4 +97,4 @@ text = "THAT POWER IS NOT YOURS TO HAVE."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345789796]
 libraries/ = SubResource("AnimationLibrary_n6rp3")
-autoplay = &"play_dialogue"
+autoplay = &"RESET"

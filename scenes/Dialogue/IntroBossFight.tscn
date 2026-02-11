@@ -5,11 +5,11 @@
 
 [sub_resource type="Theme" id="Theme_8gsjx"]
 default_font = ExtResource("1_gdmr2")
-default_font_size = 36
+default_font_size = 50
 
 [sub_resource type="Theme" id="Theme_ruqul"]
 default_font = ExtResource("2_w4sn0")
-default_font_size = 36
+default_font_size = 45
 
 [sub_resource type="Animation" id="Animation_w4sn0"]
 length = 90.0
@@ -89,16 +89,17 @@ anchors_preset = -1
 anchor_left = 0.15
 anchor_top = 0.01
 anchor_right = 0.85
-anchor_bottom = 0.14
+anchor_bottom = 0.2
 theme = SubResource("Theme_8gsjx")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Maeve Sanguina "
+horizontal_alignment = 1
 
 [node name="character_dialogue" type="RichTextLabel" parent="Panel" unique_id=1245692225]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.15
-anchor_top = 0.175
+anchor_top = 0.2
 anchor_right = 0.85
 anchor_bottom = 0.9
 theme = SubResource("Theme_ruqul")

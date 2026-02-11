@@ -1,16 +1,71 @@
 [gd_scene format=3 uid="uid://ci6pg8emv2gv0"]
 
 [ext_resource type="FontFile" uid="uid://ca8ssrj5agog0" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_vwtjf"]
+[ext_resource type="Theme" uid="uid://cjcg5dildreok" path="res://assets/Fonts/DialogueBoxTheme.tres" id="2_jouck"]
 
 [sub_resource type="Theme" id="Theme_qosa4"]
 default_font = ExtResource("1_vwtjf")
-default_font_size = 36
+default_font_size = 50
+
+[sub_resource type="Animation" id="Animation_snoik"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/character_dialogue:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["My name was once Rowan Hayes."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/character_name:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Thrall"]
+}
 
 [sub_resource type="Animation" id="Animation_3gnio"]
 resource_name = "play_dialogue"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/character_dialogue:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["My name was once Rowan Hayes.", "Most people are lucky enough to die with their families when a band of vampires burns their village to the ground.", "I am many things,", "But I am not lucky", "I had a job in a silver mine, it’s right by where Raysmelt once stood.", "I was always so tired when I came home from work. A man with two kids to feed aught to be tired at the end of the day.", "“There he is, the half cot half man! He’d fall asleep on a clothesline if he had the chance!” my wife would always say when I trudged through the door.", "“There he is, the half cot half man! He’d fall asleep on a No one else was in the mine that late that night, everyone else went back to their families.", "No one else was in the mine that late that night, everyone else went back to their families.", "That decision was their deaths.", "I heard a voice calling out to me, echoing across the tunnels.", "A Mocking, cruel, voice, spilling forth from the mouth of a woman.", "She wore a set of armor as red as her eyes, the moon above could not rival the paleness of her skin, nor could the blades held by her men compare to the sharpness of her teeth.", "“All that silver, you’d think the guards would invest in something that could stop us. But I guess your lot isn’t known for thinking—are they? You, Thrall, this is your chance for a promotion.”", "Kill the human and come back before the sun rises.
+What are you scared! It’s just a little silver, OFF WITH YOU!", "“By the will of Lady Sanguina, I will strike you down.”", "I hit the monster over the head with a chunk of ore until he stopped moving and began to smoke, I kept hitting him again and again until-", "Until my own hand started burning.", "…", "The bastard got me.", "I spent the day in that cave, hiding from the sun.", "and I wept, for all at once my senses deepened and I could smell blood—My FAMILY’S BLOOD.", "And at that moment, I knew that Lady Sanguina had to die.", "And I had to be the one to do it.", "So help me Gods."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/character_name:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 12, 13, 14, 15, 16, 24),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Rowan Hayes", "Rowan Hayes", "Maeve Sanguina", "Maeve Sanguina", "Thrall", "Rowan Hayes", "Rowan Hayes"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n6rp3"]
 _data = {
+&"RESET": SubResource("Animation_snoik"),
 &"play_dialogue": SubResource("Animation_3gnio")
 }
 
@@ -30,21 +85,26 @@ anchors_preset = -1
 anchor_left = 0.15
 anchor_top = 0.01
 anchor_right = 0.85
-anchor_bottom = 0.14
+anchor_bottom = 0.2
 grow_horizontal = 0
 theme = SubResource("Theme_qosa4")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "Maeve Sanguina"
+text = "Thrall"
+horizontal_alignment = 1
 
 [node name="character_dialogue" type="RichTextLabel" parent="Panel" unique_id=1245692225]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.15
-anchor_top = 0.175
+anchor_top = 0.2
 anchor_right = 0.85
 anchor_bottom = 0.9
+theme = ExtResource("2_jouck")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "My name was once Rowan Hayes."
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1616978385]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345789796]
 libraries/ = SubResource("AnimationLibrary_n6rp3")
+autoplay = &"play_dialogue"
