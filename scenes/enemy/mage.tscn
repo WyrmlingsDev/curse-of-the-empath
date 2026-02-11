@@ -135,11 +135,18 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fxgt"]
-radius = 89.0
+radius = 103.0
+height = 528.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l527s"]
+radius = 164.0
 height = 528.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l527s"]
 radius = 880.046
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l527s"]
+size = Vector2(321.875, 528)
 
 [node name="Mage" type="CharacterBody2D" unique_id=1632559621 groups=["Enemy"]]
 collision_layer = 4
@@ -154,9 +161,16 @@ autoplay = "idle"
 frame = 4
 frame_progress = 1.0
 
-[node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=249242713]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249242713]
 position = Vector2(0, -105)
 shape = SubResource("CapsuleShape2D_8fxgt")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1523257755]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=339021239]
+position = Vector2(0, -105)
+shape = SubResource("CapsuleShape2D_l527s")
+debug_color = Color(0.97321266, 0.12553611, 0.27700707, 0.41960785)
 
 [node name="Detection" type="Area2D" parent="." unique_id=1277583928]
 collision_layer = 4
@@ -166,3 +180,11 @@ collision_mask = 2
 position = Vector2(0, -76)
 shape = SubResource("CircleShape2D_l527s")
 debug_color = Color(0.6439317, 0.52332973, 3.85046e-07, 0.41960785)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=319751467]
+position = Vector2(-1.9375, -109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=283182021 groups=["EnemyDamageSource"]]
+shape = SubResource("RectangleShape2D_l527s")
+disabled = true
+debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)

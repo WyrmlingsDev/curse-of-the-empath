@@ -24,9 +24,11 @@ func physics_update(delta: float) -> void:
 	elif not enemy.is_on_floor():
 		enemy.animation.play("fall")
 	else:
+		enemy.hitboxCenter.set_deferred("disabled", false)
 		enemy.animation.play("land")
 		enemy.velocity.x = 0
 		enemy.animation.position.x = -39
 		enemy.animation.position.y = -31
 		await enemy.animation.animation_finished
+		enemy.hitboxCenter.set_deferred("disabled", true)
 		enemy._set_state("idle")

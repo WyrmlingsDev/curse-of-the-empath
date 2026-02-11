@@ -2,6 +2,10 @@ extends Enemy
 
 class_name Boss
 
+@onready var hitboxLeft: Area2D = $HitboxLeft
+@onready var hitboxRight: Area2D = $HitboxRight
+@onready var hitboxCenter: Area2D = $HitboxCenter
+
 func _ready() -> void:
 	attack_distance = 600
 	
@@ -35,3 +39,12 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	move_and_slide()
+
+func _check_damage_sources(_delta: Variant, hurtbox: Area2D) -> void: 
+	if i_frame_timer > 0.0: 
+		return 
+	
+	for source in hurtbox.get_overlapping_areas(): 
+		if source.is_in_group(damage_source) and source.is_in_group("Player"): 
+			_take_damage(source, 10.0) 
+			i_frame_timer = i_frame / 1000.0

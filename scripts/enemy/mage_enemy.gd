@@ -2,12 +2,15 @@ extends Enemy
 
 class_name MageEnemy
 
+@onready var hitbox: Area2D = $Hitbox
+
 func _ready() -> void:
 	attack_distance = 500
 	
 	states = {
 		"idle": preload("res://scripts/enemy/states/enemy_idle_state.gd").new(),
 		"move": preload("res://scripts/enemy/states/enemy_move_state.gd").new(),
+		"hurt": preload("res://scripts/enemy/states/enemy_hurt_state.gd").new(),
 		"attack": preload("res://scripts/enemy/states/mage_attack_state.gd").new(),
 	}
 	

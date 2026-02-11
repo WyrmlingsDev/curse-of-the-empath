@@ -3,7 +3,10 @@ extends PlayerState
 class_name PlayerJumpState
 
 func enter(_prev_state: PlayerState) -> void:
+	player.animation.play("jump")
 	player.velocity.y = player.jump
+	player.animation.scale.x = 1.1
+	player.animation.scale.y = 1.1
 	
 func physics_update(delta: float) -> void:
 	var x = Input.get_axis("Left", "Right")

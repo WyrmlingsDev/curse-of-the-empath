@@ -2,10 +2,14 @@ extends Enemy
 
 class_name SoldierEnemy
 
+@onready var hitboxLeft: Area2D = $HitboxLeft
+@onready var hitboxRight: Area2D = $HitboxRight
+
 func _ready() -> void:
 	states = {
 		"idle": preload("res://scripts/enemy/states/enemy_idle_state.gd").new(),
 		"move": preload("res://scripts/enemy/states/enemy_move_state.gd").new(),
+		"hurt": preload("res://scripts/enemy/states/enemy_hurt_state.gd").new(),
 		"attack": preload("res://scripts/enemy/states/soldier_attack_state.gd").new(),
 	}
 	
@@ -18,9 +22,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not state:
 		return
-
-	_apply_i_frames(delta)
-
+		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -29,5 +31,12 @@ func _physics_process(delta: float) -> void:
 	elif facing_direction == Vector2.RIGHT:
 		animation.flip_h = true
 
-	state.physics_update(delta)
+	if knockback_timer <= 0.0:
+		_apply_i_frames(delta)
+	
+		state.physics_update(delta)
+	else:
+		knockback_timer -= delta
+		
+	_check_damage_sources(delta, hurtbox)
 	move_and_slide()

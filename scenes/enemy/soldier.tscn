@@ -116,33 +116,74 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fxgt"]
-radius = 89.0
-height = 398.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nwrui"]
+radius = 56.0
+height = 404.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ejjj"]
+radius = 163.0
+height = 412.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ie1fv"]
 radius = 763.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ejjj"]
+size = Vector2(254.5, 416)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwrui"]
+size = Vector2(252.25, 416)
+
 [node name="Soldier" type="CharacterBody2D" unique_id=1632559621 groups=["Enemy"]]
 collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_ie1fv")
 
 [node name="Frames" type="AnimatedSprite2D" parent="." unique_id=102338033]
 position = Vector2(-48.000004, -170)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_66h5b")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
 
-[node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=249242713]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1831148814]
 position = Vector2(0, -54)
-shape = SubResource("CapsuleShape2D_8fxgt")
+shape = SubResource("CapsuleShape2D_nwrui")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=925646245]
+position = Vector2(0, -54)
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1349618249]
+shape = SubResource("CapsuleShape2D_6ejjj")
+debug_color = Color(0.9354373, 0.24002743, 0.2295115, 0.41960785)
 
 [node name="Detection" type="Area2D" parent="." unique_id=1277583928]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1760102148]
 position = Vector2(0, -76)
 shape = SubResource("CircleShape2D_ie1fv")
 debug_color = Color(0.6439317, 0.52332973, 3.85046e-07, 0.41960785)
+
+[node name="HitboxLeft" type="Area2D" parent="." unique_id=1485598350 groups=["EnemyDamageSource"]]
+position = Vector2(-127.125, -61)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxLeft" unique_id=1511369692]
+position = Vector2(255.375, 0)
+shape = SubResource("RectangleShape2D_6ejjj")
+disabled = true
+debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)
+
+[node name="HitboxRight" type="Area2D" parent="." unique_id=1001634345 groups=["EnemyDamageSource"]]
+position = Vector2(-127.125, -61)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxRight" unique_id=334033668]
+shape = SubResource("RectangleShape2D_nwrui")
+disabled = true
+debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)

@@ -9,7 +9,9 @@ class_name Player
 @export var i_frame_timer = 0.0
 @export var jump = -600.0
 
-@onready var animation = $AnimatedSprite2D
+@onready var animation := $Frames
+@onready var hitboxLeft := $HitboxLeft
+@onready var hitboxRight := $HitboxRight
 
 var state: PlayerState
 var states: Dictionary[Variant, Variant] = {}

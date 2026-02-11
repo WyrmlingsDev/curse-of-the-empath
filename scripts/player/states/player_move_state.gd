@@ -4,6 +4,8 @@ class_name PlayerMoveState
 
 func enter(prev_state: PlayerState) -> void:
 	player.animation.play("walk")
+	player.animation.scale.x = 0.3
+	player.animation.scale.y = 0.3
 
 func physics_update(delta: float) -> void:
 	var x = Input.get_axis("Left", "Right")

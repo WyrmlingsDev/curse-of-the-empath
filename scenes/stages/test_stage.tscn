@@ -87,7 +87,7 @@ tile_set = SubResource("TileSet_v3f42")
 position = Vector2(-960, 719)
 
 [node name="Soldier" parent="." unique_id=1632559621 instance=ExtResource("2_u63yl")]
-position = Vector2(4960, 392)
+position = Vector2(12, 673)
 
 [node name="Mage" parent="." unique_id=132183136 instance=ExtResource("3_8kaqf")]
 position = Vector2(6246, 379)
@@ -99,4 +99,4 @@ position = Vector2(0, 953)
 shape = SubResource("WorldBoundaryShape2D_txm6t")
 
 [node name="Boss" parent="." unique_id=1292884064 instance=ExtResource("9_q0aiw")]
-position = Vector2(452, 566)
+position = Vector2(3700, -871)
