@@ -23,9 +23,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not state:
 		return
-
-	_apply_i_frames(delta)
-
+		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -34,5 +32,12 @@ func _physics_process(delta: float) -> void:
 	elif facing_direction == Vector2.RIGHT:
 		animation.flip_h = true
 
-	state.physics_update(delta)
+	if knockback_timer <= 0.0:
+		_apply_i_frames(delta)
+	
+		state.physics_update(delta)
+	else:
+		knockback_timer -= delta
+		
+	_check_damage_sources(delta)
 	move_and_slide()

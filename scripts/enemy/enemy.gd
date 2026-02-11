@@ -45,7 +45,7 @@ func _apply_i_frames(delta):
 		i_frame_timer -= delta
 		i_frame_timer = max(i_frame_timer, 0.0)
 
-func _check_damage_sources(_delta: Variant, hurtbox: Area2D) -> void:
+func _check_damage_sources(_delta: Variant) -> void:
 	if i_frame_timer > 0.0:
 		return
 	

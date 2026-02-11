@@ -6,6 +6,8 @@ class_name SoldierEnemy
 @onready var hitboxRight: Area2D = $HitboxRight
 
 func _ready() -> void:
+	attack_distance = 350
+	
 	states = {
 		"idle": preload("res://scripts/enemy/states/enemy_idle_state.gd").new(),
 		"move": preload("res://scripts/enemy/states/enemy_move_state.gd").new(),
@@ -38,5 +40,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		knockback_timer -= delta
 		
-	_check_damage_sources(delta, hurtbox)
+	_check_damage_sources(delta)
 	move_and_slide()

@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func _check_damage_sources(_delta: Variant, hurtbox: Area2D) -> void: 
+func _check_damage_sources(_delta: Variant) -> void: 
 	if i_frame_timer > 0.0: 
 		return 
 	

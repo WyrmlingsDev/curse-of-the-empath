@@ -16,3 +16,7 @@ func enter(prev_state: EnemyState) -> void:
 	await enemy.animation.animation_finished
 	hitbox.get_node("CollisionShape2D").disabled = true
 	enemy._set_state("idle")
+
+func exit(next_state: EnemyState) -> void:
+	enemy.hitboxRight.get_node("CollisionShape2D").disabled = true
+	enemy.hitboxLeft.get_node("CollisionShape2D").disabled = true
