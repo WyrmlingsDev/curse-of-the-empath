@@ -5,7 +5,7 @@ class_name Enemy
 @export var speed = 700.0
 @export var max_health = 100.0
 @export var current_health = 100.0
-@export var i_frame: float = 200.0 # in ms
+@export var i_frame: float = 1000.0 # in ms
 @export var i_frame_timer: float = 0.0
 @export var jump = -600.0
 @export var attack_distance = 200
