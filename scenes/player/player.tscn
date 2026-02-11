@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://das2abfyhhyxd" path="res://assets/sprite/Vampire-Walk.png" id="4_lvxji"]
 [ext_resource type="Texture2D" uid="uid://bgxq1koct1imh" path="res://assets/sprite/v_Attack4_Sprite.png" id="5_h17s1"]
 [ext_resource type="Texture2D" uid="uid://bkledbjj23gb4" path="res://assets/sprite/v_Attack3_Sprite.png" id="6_je7p5"]
+[ext_resource type="Texture2D" uid="uid://dgrqctuo5ja4s" path="res://assets/img/Healthbar.png" id="9_5gtgg"]
+[ext_resource type="Texture2D" uid="uid://covhtmochxkrd" path="res://assets/img/Healthbar-clear.png" id="10_h17s1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7p2l"]
 radius = 78.0
@@ -267,6 +269,14 @@ size = Vector2(331, 416)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
 size = Vector2(336, 416)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mf0n"]
+atlas = ExtResource("9_5gtgg")
+region = Rect2(3247.6567, 1346, 4432.3433, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hvnv"]
+atlas = ExtResource("9_5gtgg")
+region = Rect2(3247.657, 1091, 4432.343, 162)
+
 [node name="Player" type="CharacterBody2D" unique_id=609366961 groups=["Player"]]
 collision_layer = 2
 collision_mask = 3
@@ -313,3 +323,24 @@ position = Vector2(168, -61)
 shape = SubResource("RectangleShape2D_p47bc")
 disabled = true
 debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1361774660]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI" unique_id=691338189]
+offset_left = 233.00003
+offset_top = 103.00001
+offset_right = 4665.0
+offset_bottom = 266.0
+rotation = -0.0017453292
+scale = Vector2(0.1, 0.1)
+value = 100.0
+texture_under = SubResource("AtlasTexture_5mf0n")
+texture_progress = SubResource("AtlasTexture_4hvnv")
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=294408951]
+offset_left = 25.999998
+offset_top = 12.999986
+offset_right = 8667.0
+offset_bottom = 4972.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_h17s1")
