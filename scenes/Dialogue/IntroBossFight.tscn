@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0i6icwttpxsm"]
 
-[ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_gdmr2"]
-[ext_resource type="FontFile" uid="uid://cblv7wxa8o1pw" path="res://assets/Fonts/caslon-antique.regular.ttf" id="2_w4sn0"]
+[ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/fonts/caslon-antique.bold.ttf" id="1_gdmr2"]
+[ext_resource type="FontFile" uid="uid://cblv7wxa8o1pw" path="res://assets/fonts/caslon-antique.regular.ttf" id="2_w4sn0"]
 [ext_resource type="Texture2D" uid="uid://5g4dl30v6kko" path="res://assets/img/Character_Portraits/Sanguina_Mad.png" id="3_ruqul"]
 [ext_resource type="Texture2D" uid="uid://bqrdryb0kmrd1" path="res://assets/img/Character_Portraits/Sanguina_mocking.png" id="4_re6pe"]
 [ext_resource type="Texture2D" uid="uid://cpkoh7xyead0a" path="res://assets/img/Character_Portraits/Sanguina_Pause.png" id="5_rqqaq"]
@@ -21,6 +21,131 @@ default_font = ExtResource("2_w4sn0")
 default_font_size = 45
 
 [sub_resource type="Animation" id="Animation_w4sn0"]
+resource_name = "RESET"
+length = 78.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/character_dialogue:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8, 6.4333334, 12.133333, 14.666667, 17.001404, 18.4, 20.8, 23.3, 25.933332, 32.266666, 33.466667, 39.333332, 43.86667, 50.166664, 53.8, 55.966667, 59.3, 63.7, 68.1, 71.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Do-ya mind telling me what you think you’re doing by killing my men and barging into my territory?", "I don’t know if you’re new to this whole vampire lord thing but a calling card
+that doesn’t involve the final death", "is usually appreciated!", "I am not a vampire lord.", "", "You’re serious aren’t you.", "You don't remember who I am.", "I’ve come to put an end to you.", "If you’re of the undying vengeance sort I’m afraid more than a few know me in that regard.", "Wait… ", "You’re a wetling aren’t you, a “new” vampire", "You’re the fellow from Raysmelt! The silver miner!", "You were the one I called up so you stand there and watch as your town burned behind us.", "Did it upset you? Are you—-", "angry, with me?", "I’m going to kill you if it’s the last thing I do.", "A legion of Knights from the Crimson order couldn’t stop me! ", "What makes you think you are any better than them?", "You are not a born vampire,", "You are nothing but an overeager thrall."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/character_name:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 6.4333334, 12.133333, 14.666667, 17.166666, 20.8, 23.3, 25.9, 53.8, 55.966667, 59.3, 63.7, 71.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Lady Sanguina ", "Lady Sanguina ", "Lady Sanguina ", "Vampire
+", "Lady Sanguina ", "Vampire
+", "Vampire
+", "Lady Sanguina 
+", "Lady Sanguina 
+", "Vampire
+", "Lady Sanguina 
+", "Lady Sanguina 
+", "Lady Sanguina 
+"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/boss_portrait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8000002, 12.2, 18.4, 25.9, 32.266666, 33.466667, 39.333332, 43.86667, 50.166664, 53.8, 59.3, 63.7, 68.1, 71.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_ruqul"), ExtResource("3_ruqul"), ExtResource("7_nlf3p"), ExtResource("4_re6pe"), ExtResource("5_rqqaq"), ExtResource("6_xuggq"), ExtResource("7_nlf3p"), ExtResource("4_re6pe"), ExtResource("5_rqqaq"), ExtResource("6_xuggq"), ExtResource("3_ruqul"), ExtResource("3_ruqul"), ExtResource("4_re6pe"), ExtResource("3_ruqul")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/character_portrait:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(14.666667, 20.8, 23.3, 55.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_penex"), ExtResource("8_kg1x8"), ExtResource("9_penex"), ExtResource("10_3fa2h")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/character_portrait:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 13.7, 14.966666, 16.733334, 17.433332, 20.5, 20.933332, 25, 25.9, 34.133335, 55.3, 55.866665, 59.3, 59.633335, 74.666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/boss_portrait:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8, 12.8, 13.9, 17.2, 17.8, 19.633333, 20.333334, 25.4, 26.133333, 54.866665, 55.566666, 56.766666, 63.766666, 72.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 2.9032,
+"stream": ExtResource("11_rqqaq")
+}],
+"times": PackedFloat32Array(0.0333333)
+}
+tracks/6/use_blend = true
+
+[sub_resource type="Animation" id="Animation_3gnio"]
+resource_name = "play_dialogue"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/character_dialogue:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3.01, 4.01, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Do-ya mind telling me what you think you’re doing by killing my men and barging into my territory?", "I don’t know if you’re new to this whole vampire lord thing but a calling card
+that doesn’t involve the final death", "is usually appreciated!", "I am not a vampire lord.", "You’re serious aren’t you.", "You don't remember who I am, I’ve come to put an end to you.", "If you’re of the undying vengeance sort I’m afraid more than a few know me in that regard."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6rp3"]
+_data = {
+&"RESET": SubResource("Animation_w4sn0"),
+&"play_dialogue": SubResource("Animation_3gnio")
+}
+
+[sub_resource type="Animation" id="Animation_rqqaq"]
+resource_name = "RESET"
 length = 78.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -120,9 +245,9 @@ tracks/6/keys = {
 }
 tracks/6/use_blend = true
 
-[sub_resource type="Animation" id="Animation_3gnio"]
-resource_name = "play_dialogue"
-length = 90.0
+[sub_resource type="Animation" id="Animation_xuggq"]
+resource_name = "RESET"
+length = 78.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -130,17 +255,101 @@ tracks/0/path = NodePath("Panel/character_dialogue:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3.01, 4.01, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.8, 6.4333334, 12.133333, 14.666667, 17.001404, 18.4, 20.8, 23.3, 25.933332, 32.266666, 33.466667, 39.333332, 43.86667, 50.166664, 53.8, 55.966667, 59.3, 63.7, 68.1, 71.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["Do-ya mind telling me what you think you’re doing by killing my men and barging into my territory?", "I don’t know if you’re new to this whole vampire lord thing but a calling card
-that doesn’t involve the final death", "is usually appreciated!", "I am not a vampire lord.", "You’re serious aren’t you.", "You don't remember who I am, I’ve come to put an end to you.", "If you’re of the undying vengeance sort I’m afraid more than a few know me in that regard."]
+that doesn’t involve the final death", "is usually appreciated!", "I am not a vampire lord.", "", "You’re serious aren’t you.", "You don't remember who I am.", "I’ve come to put an end to you.", "If you’re of the undying vengeance sort I’m afraid more than a few know me in that regard.", "Wait… ", "You’re a wetling aren’t you, a “new” vampire", "You’re the fellow from Raysmelt! The silver miner!", "You were the one I called up so you stand there and watch as your town burned behind us.", "Did it upset you? Are you—-", "angry, with me?", "I’m going to kill you if it’s the last thing I do.", "A legion of Knights from the Crimson order couldn’t stop me! ", "What makes you think you are any better than them?", "You are not a born vampire,", "You are nothing but an overeager thrall."]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/character_name:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 6.4333334, 12.133333, 14.666667, 17.166666, 20.8, 23.3, 25.9, 53.8, 55.966667, 59.3, 63.7, 71.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Maeve Sanguina ", "Maeve Sanguina ", "Maeve Sanguina ", "Vampire
+", "Maeve Sanguina ", "Vampire
+", "Vampire
+", "Maeve Sanguina 
+", "Maeve Sanguina 
+", "Vampire
+", "Maeve Sanguina 
+", "Maeve Sanguina 
+", "Maeve Sanguina 
+"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/boss_portrait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8000002, 12.2, 18.4, 25.9, 32.266666, 33.466667, 39.333332, 43.86667, 50.166664, 53.8, 59.3, 63.7, 68.1, 71.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_ruqul"), ExtResource("3_ruqul"), ExtResource("7_nlf3p"), ExtResource("4_re6pe"), ExtResource("5_rqqaq"), ExtResource("6_xuggq"), ExtResource("7_nlf3p"), ExtResource("4_re6pe"), ExtResource("5_rqqaq"), ExtResource("6_xuggq"), ExtResource("3_ruqul"), ExtResource("3_ruqul"), ExtResource("4_re6pe"), ExtResource("3_ruqul")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/character_portrait:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(14.666667, 20.8, 23.3, 55.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_penex"), ExtResource("8_kg1x8"), ExtResource("9_penex"), ExtResource("10_3fa2h")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/character_portrait:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 13.7, 14.966666, 16.733334, 17.433332, 20.5, 20.933332, 25, 25.9, 34.133335, 55.3, 55.866665, 59.3, 59.633335, 74.666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/boss_portrait:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8, 12.8, 13.9, 17.2, 17.8, 19.633333, 20.333334, 25.4, 26.133333, 54.866665, 55.566666, 56.766666, 63.766666, 72.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 2.9032,
+"stream": ExtResource("11_rqqaq")
+}],
+"times": PackedFloat32Array(0.0333333)
+}
+tracks/6/use_blend = true
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6rp3"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nlf3p"]
 _data = {
-&"RESET": SubResource("Animation_w4sn0"),
-&"play_dialogue": SubResource("Animation_3gnio")
+&"IntroBossFightanim": SubResource("Animation_rqqaq"),
+&"RESET": SubResource("Animation_xuggq")
 }
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=198018426]
@@ -162,7 +371,7 @@ anchor_right = 0.85
 anchor_bottom = 0.399
 theme = SubResource("Theme_8gsjx")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "Maeve Sanguina "
+text = "Lady Sanguina "
 horizontal_alignment = 1
 
 [node name="character_dialogue" type="RichTextLabel" parent="Panel" unique_id=1245692225]
@@ -200,4 +409,5 @@ expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345789796]
 libraries/ = SubResource("AnimationLibrary_n6rp3")
+libraries/Internal = SubResource("AnimationLibrary_nlf3p")
 autoplay = &"RESET"

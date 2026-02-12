@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://ci6pg8emv2gv0"]
 
-[ext_resource type="FontFile" uid="uid://ca8ssrj5agog0" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_vwtjf"]
+[ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_vwtjf"]
 [ext_resource type="Theme" uid="uid://cjcg5dildreok" path="res://assets/Fonts/DialogueBoxTheme.tres" id="2_jouck"]
+[ext_resource type="Texture2D" uid="uid://bqrdryb0kmrd1" path="res://assets/img/Character_Portraits/Sanguina_mocking.png" id="3_lrjjw"]
+[ext_resource type="Texture2D" uid="uid://fo31j0uc5751" path="res://assets/img/Character_Portraits/Vampire_speaking.png" id="4_a2xr3"]
+[ext_resource type="Texture2D" uid="uid://cpppu0cwwundm" path="res://assets/img/Character_Portraits/Vampire_neutral.png" id="5_oe2ef"]
+[ext_resource type="Texture2D" uid="uid://5g4dl30v6kko" path="res://assets/img/Character_Portraits/Sanguina_Mad.png" id="5_sjbx6"]
+[ext_resource type="Texture2D" uid="uid://cl34h0n6jfsp5" path="res://assets/img/Character_Portraits/Goblinthrall.png" id="6_4s0ps"]
+[ext_resource type="Texture2D" uid="uid://dhdinjm5w6uln" path="res://assets/img/Character_Portraits/Vampire_angry.png" id="6_negt6"]
+[ext_resource type="AudioStream" uid="uid://bjjlta8pu7vtk" path="res://assets/audio/Game_Intro.mp3" id="7_4s0ps"]
 
 [sub_resource type="Theme" id="Theme_qosa4"]
 default_font = ExtResource("1_vwtjf")
@@ -33,10 +40,58 @@ tracks/1/keys = {
 "update": 1,
 "values": ["Thrall"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/player_portrait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_a2xr3")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/enemy_portrait:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_lrjjw")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/player_portrait:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/enemy_portrait:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_3gnio"]
 resource_name = "play_dialogue"
-length = 90.0
+length = 140.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -44,11 +99,10 @@ tracks/0/path = NodePath("Panel/character_dialogue:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(2, 5.0333333, 12.233334, 14.433333, 16.5, 21.9, 26.1, 37.1, 43.633335, 47.066666, 51.9, 56.933334, 65.933334, 77.46667, 86.73333, 93.833336, 99.46667, 110.76667, 114.13333, 115.5, 118.1, 122.833336, 130.36667, 135.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["My name was once Rowan Hayes.", "Most people are lucky enough to die with their families when a band of vampires burns their village to the ground.", "I am many things,", "But I am not lucky", "I had a job in a silver mine, it’s right by where Raysmelt once stood.", "I was always so tired when I came home from work. A man with two kids to feed aught to be tired at the end of the day.", "“There he is, the half cot half man! He’d fall asleep on a clothesline if he had the chance!” my wife would always say when I trudged through the door.", "“There he is, the half cot half man! He’d fall asleep on a No one else was in the mine that late that night, everyone else went back to their families.", "No one else was in the mine that late that night, everyone else went back to their families.", "That decision was their deaths.", "I heard a voice calling out to me, echoing across the tunnels.", "A Mocking, cruel, voice, spilling forth from the mouth of a woman.", "She wore a set of armor as red as her eyes, the moon above could not rival the paleness of her skin, nor could the blades held by her men compare to the sharpness of her teeth.", "“All that silver, you’d think the guards would invest in something that could stop us. But I guess your lot isn’t known for thinking—are they? You, Thrall, this is your chance for a promotion.”", "Kill the human and come back before the sun rises.
-What are you scared! It’s just a little silver, OFF WITH YOU!", "“By the will of Lady Sanguina, I will strike you down.”", "I hit the monster over the head with a chunk of ore until he stopped moving and began to smoke, I kept hitting him again and again until-", "Until my own hand started burning.", "…", "The bastard got me.", "I spent the day in that cave, hiding from the sun.", "and I wept, for all at once my senses deepened and I could smell blood—My FAMILY’S BLOOD.", "And at that moment, I knew that Lady Sanguina had to die.", "And I had to be the one to do it.", "So help me Gods."]
+"values": ["My name was once Rowan Hayes.", "Most people are lucky enough to die with their families when a band of vampires burns their village to the ground.", "I am many things,", "But I am not lucky", "I had a job in a silver mine, right by where Raysmelt once stood.", "I was always so tired when I came home from work.", "“There he is, the half cot half man! He’d fall asleep on a clothesline if he had the chance!” my wife would always say when I trudged through the door.", "No one else was in the mines that late, everyone else went back to their families.", "That decision was their deaths.", "I heard a voice calling out to me, echoing across the tunnels.", "A Mocking, cruel, voice, spilling forth from the mouth of a woman.", "All that silver, you’d think the guards would invest in something that could stop us. But I guess your lot isn’t known for thinking—are they?", "She wore a set of armor as red as her eyes, the moon above could not rival the paleness of her skin, nor could the blades held by her men compare to the sharpness of her teeth.", "You, Thrall, this is your chance for a promotion. Kill the human and come back before the sun rises.", "What are you scared! It’s just a little silver, OFF WITH YOU!", "By the will of Lady Sanguina, I will strike you down.", "I hit the monster over the head with a chunk of ore until he stopped moving and began to smoke, I kept hitting him again and again until-", "Until my own hand started burning.", "…", "The bastard got me.", "I spent the day in that cave, hiding from the sun and I wept,", "for all at once my senses deepened and I could smell blood—My FAMILY’S BLOOD.", "And at that moment, I knew that Lady Sanguina had to die.", "And I had to be the one to do it."]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -57,16 +111,175 @@ tracks/1/path = NodePath("Panel/character_name:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 12, 13, 14, 15, 16, 24),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 51.966667, 56.933334, 66.399994, 77.46667, 93.833336, 99.46667, 138.93332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["Rowan Hayes", "Rowan Hayes", "Maeve Sanguina", "Maeve Sanguina", "Thrall", "Rowan Hayes", "Rowan Hayes"]
+"values": ["Vampire", "Vampire", "Lady Sanguina", "Vampire", "Lady Sanguina", "Goblin Thrall", "Vampire", "Vampire"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/player_portrait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 16.366667, 47.133335, 51.97667, 66.399994, 93.96667, 111.166664, 114.24472, 115.596115, 139.08957),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_oe2ef"), ExtResource("4_a2xr3"), ExtResource("4_a2xr3"), ExtResource("6_negt6"), ExtResource("4_a2xr3"), ExtResource("4_a2xr3"), ExtResource("4_a2xr3"), ExtResource("5_oe2ef"), ExtResource("6_negt6"), ExtResource("6_negt6")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/enemy_portrait:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(58.2, 78.8, 93.833336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_lrjjw"), ExtResource("5_sjbx6"), ExtResource("6_4s0ps")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/player_portrait:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.16666663, 56.066666, 56.766666, 65.899994, 66.666664, 77.73333, 78.333336, 99.13333, 99.96667, 139.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/enemy_portrait:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.16666603, 57.166668, 57.866665, 66.13333, 66.63333, 77.4, 78.23333, 99.6, 100.1, 138.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 1.2854,
+"stream": ExtResource("7_4s0ps")
+}],
+"times": PackedFloat32Array(0.13333333)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n6rp3"]
 _data = {
 &"RESET": SubResource("Animation_snoik"),
 &"play_dialogue": SubResource("Animation_3gnio")
+}
+
+[sub_resource type="Animation" id="Animation_oe2ef"]
+resource_name = "play_dialogue"
+length = 140.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/character_dialogue:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 5.0333333, 12.233334, 14.433333, 16.5, 21.9, 26.1, 37.1, 43.633335, 47.066666, 51.9, 56.933334, 65.933334, 77.46667, 86.73333, 93.833336, 99.46667, 110.76667, 114.13333, 115.5, 118.1, 122.833336, 130.36667, 135.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["My name was once Rowan Hayes.", "Most people are lucky enough to die with their families when a band of vampires burns their village to the ground.", "I am many things,", "But I am not lucky", "I had a job in a silver mine, right by where Raysmelt once stood.", "I was always so tired when I came home from work.", "“There he is, the half cot half man! He’d fall asleep on a clothesline if he had the chance!” my wife would always say when I trudged through the door.", "No one else was in the mines that late, everyone else went back to their families.", "That decision was their deaths.", "I heard a voice calling out to me, echoing across the tunnels.", "A Mocking, cruel, voice, spilling forth from the mouth of a woman.", "All that silver, you’d think the guards would invest in something that could stop us. But I guess your lot isn’t known for thinking—are they?", "She wore a set of armor as red as her eyes, the moon above could not rival the paleness of her skin, nor could the blades held by her men compare to the sharpness of her teeth.", "You, Thrall, this is your chance for a promotion. Kill the human and come back before the sun rises.", "What are you scared! It’s just a little silver, OFF WITH YOU!", "By the will of Lady Sanguina, I will strike you down.", "I hit the monster over the head with a chunk of ore until he stopped moving and began to smoke, I kept hitting him again and again until-", "Until my own hand started burning.", "…", "The bastard got me.", "I spent the day in that cave, hiding from the sun and I wept,", "for all at once my senses deepened and I could smell blood—My FAMILY’S BLOOD.", "And at that moment, I knew that Lady Sanguina had to die.", "And I had to be the one to do it."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/character_name:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 51.966667, 56.933334, 66.399994, 77.46667, 93.833336, 99.46667, 138.93332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Vampire", "Vampire", "Lady Sanguina", "Vampire", "Lady Sanguina", "Goblin Thrall", "Vampire", "Vampire"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/player_portrait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 16.366667, 47.133335, 51.97667, 66.399994, 93.96667, 111.166664, 114.24472, 115.596115, 139.08957),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_oe2ef"), ExtResource("4_a2xr3"), ExtResource("4_a2xr3"), ExtResource("6_negt6"), ExtResource("4_a2xr3"), ExtResource("4_a2xr3"), ExtResource("4_a2xr3"), ExtResource("5_oe2ef"), ExtResource("6_negt6"), ExtResource("6_negt6")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/enemy_portrait:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(58.2, 78.8, 93.833336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_lrjjw"), ExtResource("5_sjbx6"), ExtResource("6_4s0ps")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/player_portrait:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.16666663, 56.066666, 56.766666, 65.899994, 66.666664, 77.73333, 78.333336, 99.13333, 99.96667, 139.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/enemy_portrait:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.16666603, 57.166668, 57.866665, 66.13333, 66.63333, 77.4, 78.23333, 99.6, 100.1, 138.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 1.2854,
+"stream": ExtResource("7_4s0ps")
+}],
+"times": PackedFloat32Array(0.13333333)
+}
+tracks/6/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_negt6"]
+_data = {
+&"Game_Intro": SubResource("Animation_oe2ef")
 }
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=198018426]
@@ -85,7 +298,7 @@ anchors_preset = -1
 anchor_left = 0.15
 anchor_top = 0.01
 anchor_right = 0.85
-anchor_bottom = 0.2
+anchor_bottom = 0.3
 grow_horizontal = 0
 theme = SubResource("Theme_qosa4")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -96,15 +309,38 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.15
-anchor_top = 0.2
+anchor_top = 0.3
 anchor_right = 0.85
 anchor_bottom = 0.9
 theme = ExtResource("2_jouck")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "My name was once Rowan Hayes."
 
+[node name="enemy_portrait" type="TextureRect" parent="Panel" unique_id=1893540955]
+self_modulate = Color(0.13333334, 0.13333334, 0.13333334, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.86
+anchor_top = 0.1
+anchor_right = 0.98
+anchor_bottom = 0.9
+texture = ExtResource("3_lrjjw")
+expand_mode = 1
+
+[node name="player_portrait" type="TextureRect" parent="Panel" unique_id=1891423989]
+self_modulate = Color(0.13333334, 0.13333334, 0.13333334, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.1
+anchor_right = 0.14
+anchor_bottom = 0.9
+texture = ExtResource("4_a2xr3")
+expand_mode = 1
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1616978385]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345789796]
 libraries/ = SubResource("AnimationLibrary_n6rp3")
+libraries/Internal = SubResource("AnimationLibrary_negt6")
 autoplay = &"play_dialogue"
