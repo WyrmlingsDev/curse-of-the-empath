@@ -2,17 +2,24 @@ extends CharacterBody2D
 
 class_name Enemy
 
-@export var speed = 700.0
-@export var max_health = 100.0
-@export var current_health = 100.0
-@export var i_frame: float = 1000.0 # in ms
+const ATTACK_DELAY := 5.0
+
+@export var enemy_type: String = "Enemy"
+@export var speed: float = 700.0
+@export var max_health: float = 100.0
+@export var current_health: float = 100.0
+@export var i_frame: float = 800.0 # in ms
 @export var i_frame_timer: float = 0.0
-@export var jump = -600.0
-@export var attack_distance = 200
+@export var jump: float = -600.0
+@export var attack_distance: float = 200
 @export var target_pos: Vector2
-@export var knockback_time = 0.05
-@export var knockback_timer = 0.0
+@export var knockback_time: float = 0.05
+@export var knockback_timer: float = 0.0
 @export var damage_source: String = "PlayerDamageSource"
+
+@export var attack_sound: AudioStreamMP3
+@export var damage_sound: AudioStreamMP3
+@export var death_sound: AudioStreamMP3
 
 @onready var animation: AnimatedSprite2D = $Frames
 @onready var detection: Area2D = $Detection
@@ -21,9 +28,7 @@ class_name Enemy
 var state: EnemyState
 var states: Dictionary[Variant, Variant] = {}
 var facing_direction: Vector2 = Vector2.ZERO
-
-var attack_timer := 0
-const ATTACK_DELAY := 200.0
+var attack_timer = 0
 
 func _set_state(state_name) -> void:
 	if not states.has(state_name):
@@ -51,12 +56,11 @@ func _check_damage_sources(_delta: Variant) -> void:
 	
 	for source in hurtbox.get_overlapping_areas():
 		if source.is_in_group(damage_source) and source.is_in_group("Player"):
+			EventBus.emit_signal("on_enemy_damage", self, source)
 			_set_state("hurt")
 			return
 
 func _take_damage(source: Variant, amount: float) -> void:
-	knockback_timer = knockback_time
-	velocity.x = -facing_direction.x * 800.0
 	current_health -= amount
 
 	if current_health <= 0:

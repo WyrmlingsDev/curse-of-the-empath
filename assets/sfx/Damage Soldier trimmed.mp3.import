@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kny8ioligjg6"
+path="res://.godot/imported/Damage Soldier trimmed.mp3-a19bc874c3b754a2dd214892f11f6ff0.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Damage Soldier trimmed.mp3"
+dest_files=["res://.godot/imported/Damage Soldier trimmed.mp3-a19bc874c3b754a2dd214892f11f6ff0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

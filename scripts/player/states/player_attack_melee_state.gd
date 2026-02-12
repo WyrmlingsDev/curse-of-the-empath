@@ -6,7 +6,10 @@ var combo_step := 1
 var input_buffered := false
 var timeout_timer := 0.0
 
-func enter(prev_state: PlayerState) -> void:
+func enter(prev_state: PlayerState) -> void:	
+	if not player.damage_sounds.is_empty():
+		var random = randi_range(0, player.attack_sounds.size() - 1)
+		SoundBus._queue_sound(str("player_attack_sound"), player.attack_sounds[random], player.position)
 	combo_step = 1
 	input_buffered = false
 	timeout_timer = 0.0
@@ -26,10 +29,13 @@ func physics_update(delta: float) -> void:
 		input_buffered = true
 		timeout_timer = 0.0
 
-	if timeout_timer >= 0.3:
+	if timeout_timer >= 0.5:
 		player._set_state("idle")
 
 func _play_combo() -> void:
+	if not player.attack_sounds.is_empty():
+		var random = randi_range(0, player.attack_sounds.size() - 1)
+		SoundBus._queue_sound(str("player_attack_sound"), player.attack_sounds[random], player.position)
 	var dir = player.facing_direction
 	var hitbox: Area2D
 	if dir == Vector2.RIGHT:

@@ -5,9 +5,7 @@ class_name SoldierEnemy
 @onready var hitboxLeft: Area2D = $HitboxLeft
 @onready var hitboxRight: Area2D = $HitboxRight
 
-func _ready() -> void:
-	attack_distance = 350
-	
+func _ready() -> void:	
 	states = {
 		"idle": preload("res://scripts/enemy/states/enemy_idle_state.gd").new(),
 		"move": preload("res://scripts/enemy/states/enemy_move_state.gd").new(),
@@ -33,12 +31,7 @@ func _physics_process(delta: float) -> void:
 	elif facing_direction == Vector2.RIGHT:
 		animation.flip_h = true
 
-	if knockback_timer <= 0.0:
-		_apply_i_frames(delta)
-	
-		state.physics_update(delta)
-	else:
-		knockback_timer -= delta
-		
+	_apply_i_frames(delta)
+	state.physics_update(delta)
 	_check_damage_sources(delta)
 	move_and_slide()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsdv6r6b2e1b0"
+path="res://.godot/imported/Attack Soldier trimmed.mp3-08c2a6104e740321a9f45b83110e0e45.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Attack Soldier trimmed.mp3"
+dest_files=["res://.godot/imported/Attack Soldier trimmed.mp3-08c2a6104e740321a9f45b83110e0e45.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

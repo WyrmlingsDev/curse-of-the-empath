@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://25uio7sbfbc2"
+path="res://.godot/imported/Attack Assassin trimmed.mp3-7977cb3ec1da644f4a0fde77c3f942e6.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Attack Assassin trimmed.mp3"
+dest_files=["res://.godot/imported/Attack Assassin trimmed.mp3-7977cb3ec1da644f4a0fde77c3f942e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
