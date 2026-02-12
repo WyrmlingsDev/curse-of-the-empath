@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ca8ssrj5agog0"
-path="res://.godot/imported/caslon-antique.bold.ttf-c36682dd6e995b43e092c07b2f57adfb.fontdata"
+uid="uid://7qqeofoctjp5"
+path="res://.godot/imported/caslon-antique.bold.ttf-df537539f3dddf9a6ce8e526f72696ea.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/caslon-antique.bold.ttf"
-dest_files=["res://.godot/imported/caslon-antique.bold.ttf-c36682dd6e995b43e092c07b2f57adfb.fontdata"]
+source_file="res://assets/fonts/caslon-antique.bold.ttf"
+dest_files=["res://.godot/imported/caslon-antique.bold.ttf-df537539f3dddf9a6ce8e526f72696ea.fontdata"]
 
 [params]
 
