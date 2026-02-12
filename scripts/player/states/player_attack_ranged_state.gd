@@ -5,6 +5,8 @@ class_name PlayerAttackRangedState
 @onready var arrow = preload("res://scenes/projectile/arrow.tscn")
 
 func enter(prev_state: PlayerState) -> void:
+	if player.ranged_sound != null:
+		SoundBus._queue_sound(str("player_ranged_sound"), player.ranged_sound, player.position)
 	player.animation.scale.x = 0.3
 	player.animation.scale.y = 0.3
 	player.animation.play("ranged")

@@ -14,6 +14,9 @@ func enter(prev_state: EnemyState) -> void:
 	
 	enemy.global_position.y -= 1
 	enemy.animation.play("jump")
+	
+func exit(next_state: EnemyState) -> void:
+	enemy.hitboxCenter.get_node("CollisionShape2D").disabled = true
 
 func physics_update(delta: float) -> void:
 	if enemy.velocity.y < 0:
@@ -24,11 +27,11 @@ func physics_update(delta: float) -> void:
 	elif not enemy.is_on_floor():
 		enemy.animation.play("fall")
 	else:
-		enemy.hitboxCenter.set_deferred("disabled", false)
+		enemy.hitboxCenter.get_node("CollisionShape2D").disabled = false
 		enemy.animation.play("land")
 		enemy.velocity.x = 0
 		enemy.animation.position.x = -39
 		enemy.animation.position.y = -31
 		await enemy.animation.animation_finished
-		enemy.hitboxCenter.set_deferred("disabled", true)
+		enemy.hitboxCenter.get_node("CollisionShape2D").disabled = true
 		enemy._set_state("idle")

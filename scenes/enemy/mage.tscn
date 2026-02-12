@@ -2,8 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://bx8q0sks2htyc" path="res://assets/sprite/Mage-Attack.png" id="1_er4io"]
 [ext_resource type="Script" uid="uid://bvaok0o35dxbm" path="res://scripts/enemy/mage_enemy.gd" id="1_l527s"]
+[ext_resource type="AudioStream" uid="uid://10kx4r4sbuj3" path="res://assets/sfx/Casting Mage trimmed (1).mp3" id="2_8rfdh"]
 [ext_resource type="Texture2D" uid="uid://iqthufbqg6rw" path="res://assets/sprite/Mage-Damage.png" id="2_l527s"]
+[ext_resource type="AudioStream" uid="uid://putjhrxykot3" path="res://assets/sfx/Damage Mage trimmed.mp3" id="3_bg0nf"]
 [ext_resource type="Texture2D" uid="uid://dmg7miw6uxaq1" path="res://assets/sprite/Mage-Idle.png" id="3_whvh0"]
+[ext_resource type="AudioStream" uid="uid://e5nlwu4v4kd5" path="res://assets/sfx/Death Mage MK2 trimmed.mp3" id="4_ymv8u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o10pu"]
 atlas = ExtResource("1_er4io")
@@ -151,6 +154,11 @@ size = Vector2(321.875, 528)
 [node name="Mage" type="CharacterBody2D" unique_id=1632559621 groups=["Enemy"]]
 collision_layer = 4
 script = ExtResource("1_l527s")
+enemy_type = "Mage"
+attack_distance = 500.0
+attack_sound = ExtResource("2_8rfdh")
+damage_sound = ExtResource("3_bg0nf")
+death_sound = ExtResource("4_ymv8u")
 
 [node name="Frames" type="AnimatedSprite2D" parent="." unique_id=102338033]
 position = Vector2(-34, -157)

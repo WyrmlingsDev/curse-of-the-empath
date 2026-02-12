@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ce6akhqka68h6"
+path="res://.godot/imported/Demon Death trimmed.mp3-993acd51ca34e07191322356aa4fedac.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Demon Death trimmed.mp3"
+dest_files=["res://.godot/imported/Demon Death trimmed.mp3-993acd51ca34e07191322356aa4fedac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

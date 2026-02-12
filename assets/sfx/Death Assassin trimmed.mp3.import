@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cv8cqvksdfb4x"
+path="res://.godot/imported/Death Assassin trimmed.mp3-9e286de66af2fe29b5496af5d7e2a2b3.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Death Assassin trimmed.mp3"
+dest_files=["res://.godot/imported/Death Assassin trimmed.mp3-9e286de66af2fe29b5496af5d7e2a2b3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

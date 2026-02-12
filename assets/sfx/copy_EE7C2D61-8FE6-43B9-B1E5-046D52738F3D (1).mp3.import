@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx4svde068bmw"
+path="res://.godot/imported/copy_EE7C2D61-8FE6-43B9-B1E5-046D52738F3D (1).mp3-a3400db5f6360ffa4b73b1bb24fe642f.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/copy_EE7C2D61-8FE6-43B9-B1E5-046D52738F3D (1).mp3"
+dest_files=["res://.godot/imported/copy_EE7C2D61-8FE6-43B9-B1E5-046D52738F3D (1).mp3-a3400db5f6360ffa4b73b1bb24fe642f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

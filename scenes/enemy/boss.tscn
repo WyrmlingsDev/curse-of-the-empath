@@ -5,9 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://bsfec10ik1660" path="res://assets/sprite/Sanguina-Idle.png" id="1_vefcp"]
 [ext_resource type="Texture2D" uid="uid://bqan2l74ji3r2" path="res://assets/sprite/Sanguina-DownFall.png" id="2_40x6t"]
 [ext_resource type="Texture2D" uid="uid://cbhk7xuj3ni2o" path="res://assets/sprite/Sanguina-Jump.png" id="2_e3jr6"]
+[ext_resource type="AudioStream" uid="uid://bx4svde068bmw" path="res://assets/sfx/copy_EE7C2D61-8FE6-43B9-B1E5-046D52738F3D (1).mp3" id="2_hmj6a"]
 [ext_resource type="Texture2D" uid="uid://bphb8vp5iwf2a" path="res://assets/sprite/Sanguina-Run.png" id="3_b0cli"]
 [ext_resource type="Texture2D" uid="uid://bsoawkf5aa7h1" path="res://assets/sprite/Sanguina-OverheadAtk.png" id="3_ee08l"]
+[ext_resource type="AudioStream" uid="uid://cfkyj66rntuqg" path="res://assets/sfx/copy_7F218717-E017-45D4-A1A2-DD834F6EDBC9 (1).mp3" id="3_ru2p3"]
+[ext_resource type="AudioStream" uid="uid://t7etapw11wxy" path="res://assets/sfx/copy_1EC4FEC8-B924-4F84-BEB1-D0F5F5AE28DF (1).mp3" id="4_50kjt"]
+[ext_resource type="AudioStream" uid="uid://dv07delmtao0j" path="res://assets/sfx/copy_D282AA0A-A213-4761-934C-6DBAF30E0EB8.mp3" id="5_pm44g"]
+[ext_resource type="AudioStream" uid="uid://ckcmkweclu5f0" path="res://assets/sfx/copy_302DD4BF-53D0-4F20-A295-92369D51A0F1.mp3" id="6_uf7ql"]
 [ext_resource type="Texture2D" uid="uid://g0iojcquou2g" path="res://assets/sprite/Sanguina-Land.png" id="7_mibu8"]
+[ext_resource type="AudioStream" uid="uid://cs51peuv3y50a" path="res://assets/sfx/copy_D8FC914F-6104-4750-BD2C-30A5C61EA505 (1).mp3" id="7_yqmul"]
+[ext_resource type="AudioStream" uid="uid://b16x6qt3as82r" path="res://assets/sfx/copy_182D5F93-0FCB-4532-ADF9-14D66F6E0BFD.mp3" id="8_ru2p3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofukx"]
 atlas = ExtResource("1_40x6t")
@@ -259,24 +266,31 @@ radius = 61.0
 height = 528.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mibu8"]
-radius = 89.0
+radius = 170.0
 height = 528.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l527s"]
-radius = 880.046
+radius = 1738.0414
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mibu8"]
-size = Vector2(254.5, 525)
+size = Vector2(411.5, 525)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynkbp"]
-size = Vector2(252.25, 525)
+size = Vector2(374.25, 525)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58iuw"]
-size = Vector2(297.125, 525.5)
+size = Vector2(194, 215.5)
 
 [node name="Boss" type="CharacterBody2D" unique_id=1632559621 groups=["Enemy"]]
 collision_layer = 4
 script = ExtResource("1_ee08l")
+attack_sounds = Array[AudioStreamMP3]([ExtResource("2_hmj6a"), ExtResource("3_ru2p3"), ExtResource("4_50kjt")])
+damage_sounds = Array[AudioStreamMP3]([ExtResource("5_pm44g"), ExtResource("6_uf7ql"), ExtResource("7_yqmul")])
+jump_attack_sound = ExtResource("8_ru2p3")
+enemy_type = "Boss"
+max_health = 500.0
+current_health = 500.0
+attack_distance = 600.0
 
 [node name="Frames" type="AnimatedSprite2D" parent="." unique_id=102338033]
 position = Vector2(-122, -311)
@@ -290,6 +304,8 @@ position = Vector2(0, -105)
 shape = SubResource("CapsuleShape2D_8fxgt")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1672681825]
+collision_layer = 16
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=384512982]
 position = Vector2(0, -105)
@@ -305,26 +321,34 @@ position = Vector2(0, -76)
 shape = SubResource("CircleShape2D_l527s")
 debug_color = Color(0.6439317, 0.52332973, 3.85046e-07, 0.41960785)
 
-[node name="HitboxLeft" type="Area2D" parent="." unique_id=321069615]
+[node name="HitboxLeft" type="Area2D" parent="." unique_id=321069615 groups=["Enemy", "EnemyDamageSource"]]
+position = Vector2(-256, 0)
+collision_layer = 8
+collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxLeft" unique_id=1718465834 groups=["EnemyDamageSource"]]
-position = Vector2(128.25, -115.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxLeft" unique_id=1718465834]
+position = Vector2(49.75, -115.5)
 shape = SubResource("RectangleShape2D_mibu8")
 disabled = true
 debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)
 
-[node name="HitboxRight" type="Area2D" parent="." unique_id=1490733158]
+[node name="HitboxRight" type="Area2D" parent="." unique_id=1490733158 groups=["Enemy", "EnemyDamageSource"]]
+position = Vector2(256, 0)
+collision_layer = 8
+collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxRight" unique_id=2114351856 groups=["EnemyDamageSource"]]
-position = Vector2(-127.125, -115.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxRight" unique_id=2114351856]
+position = Vector2(-66.125, -115.5)
 shape = SubResource("RectangleShape2D_ynkbp")
 disabled = true
 debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)
 
-[node name="HitboxCenter" type="Area2D" parent="." unique_id=1273207978]
+[node name="HitboxCenter" type="Area2D" parent="." unique_id=1273207978 groups=["Enemy", "EnemyDamageSource"]]
+collision_layer = 8
+collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxCenter" unique_id=142652286 groups=["EnemyDamageSource"]]
-position = Vector2(2, -115.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxCenter" unique_id=142652286]
+position = Vector2(-2, 39.75)
 shape = SubResource("RectangleShape2D_58iuw")
 disabled = true
 debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)

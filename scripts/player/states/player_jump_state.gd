@@ -3,6 +3,8 @@ extends PlayerState
 class_name PlayerJumpState
 
 func enter(_prev_state: PlayerState) -> void:
+	if player.jump_sound != null:
+		SoundBus._queue_sound(str("player_jump_sound"), player.jump_sound, player.position)
 	player.animation.play("jump")
 	player.velocity.y = player.jump
 	player.animation.scale.x = 1.1

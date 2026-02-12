@@ -17,7 +17,7 @@ func physics_update(delta: float) -> void:
 		enemy.velocity = Vector2.ZERO
 		enemy._set_state("attack")
 		return
-	
+
 	var dir := (enemy.target_pos - enemy.global_position).normalized()
 	enemy.velocity = dir * enemy.speed
 	enemy.velocity.y = 0
@@ -30,5 +30,4 @@ func physics_update(delta: float) -> void:
 	for source in enemy.detection.get_overlapping_bodies():
 		if source.is_in_group("Player"):
 			enemy.target_pos = source.global_position
-			enemy._set_state("move")
 			return
