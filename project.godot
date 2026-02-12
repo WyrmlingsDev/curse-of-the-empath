@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 EventBus="*uid://2ilb0drmc3rv"
 SoundBus="*uid://wtv5oihsn4d7"
+SceneManager="*uid://de8qyyuwaymqq"
 
 [display]
 

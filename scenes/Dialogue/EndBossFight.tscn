@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8wnaf1t5u0nu"]
 
-[ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_lblfi"]
-[ext_resource type="FontFile" uid="uid://cblv7wxa8o1pw" path="res://assets/Fonts/caslon-antique.regular.ttf" id="2_0oe06"]
+[ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/fonts/caslon-antique.bold.ttf" id="1_lblfi"]
+[ext_resource type="FontFile" uid="uid://cblv7wxa8o1pw" path="res://assets/fonts/caslon-antique.regular.ttf" id="2_0oe06"]
 [ext_resource type="AudioStream" uid="uid://bpd530boe0k7" path="res://assets/audio/Game_end.mp3" id="3_ktec3"]
 [ext_resource type="Texture2D" uid="uid://5g4dl30v6kko" path="res://assets/img/Character_Portraits/Sanguina_Mad.png" id="3_undsk"]
 [ext_resource type="Texture2D" uid="uid://dhdinjm5w6uln" path="res://assets/img/Character_Portraits/Vampire_angry.png" id="4_x0iuc"]
@@ -16,8 +16,9 @@ default_font_size = 50
 default_font = ExtResource("2_0oe06")
 default_font_size = 45
 
-[sub_resource type="Animation" id="Animation_qhrbu"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_x0iuc"]
+resource_name = "play_dialogue"
+length = 75.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -25,10 +26,10 @@ tracks/0/path = NodePath("Panel/character_dialogue:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333333, 3.1999998, 4.8999996, 11.666667, 14.766666, 18.933332, 29.233334, 34.133335, 41.666668, 48.066666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["THAT POWER IS NOT YOURS TO HAVE."]
+"values": ["What are you doing?", "Unhand me!", "YOU CANT DO THIS, YOU’LL DIE TOO, OR ARE YOU TOO STUPID TO REALIZE THAT?", "THERE IS NO AFTERLIFE FOR A VAMPIRE!", "YOU'LL NEVER SEE YOUR FAMILY AGAIN!", "and it felt like a weight was lifted off my chest, knowing they’d never see me like this.", "It’s a beautiful morning out,", "but you know me too well Feyore….", "I’m going to sleep through it.", ""]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -37,10 +38,10 @@ tracks/1/path = NodePath("Panel/character_name:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 18.866667, 47.466667, 48.066666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": ["Maeve Sanguina"]
+"values": ["Lady Sanguina", "Vampire", "Vampire", ""]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -49,10 +50,10 @@ tracks/2/path = NodePath("Panel/boss_portrait:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.4, 3.0666666),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("3_undsk")]
+"values": [ExtResource("5_4gu03"), ExtResource("3_undsk")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -61,34 +62,49 @@ tracks/3/path = NodePath("Panel/player_portrait:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 18.166666, 47.333332),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_x0iuc")]
+"values": [ExtResource("4_x0iuc"), ExtResource("6_c6hc1"), ExtResource("6_c6hc1")]
 }
-tracks/4/type = "value"
+tracks/4/type = "audio"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Panel/boss_portrait:self_modulate")
+tracks/4/path = NodePath("AudioStreamPlayer2D")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ktec3")
+}],
+"times": PackedFloat32Array(0.099999905)
 }
+tracks/4/use_blend = true
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Panel/player_portrait:self_modulate")
+tracks/5/path = NodePath("Panel/boss_portrait:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 17.366667, 18.066668, 74.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.13333334, 0.13333334, 0.13333334, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/player_portrait:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.16666603, 17.466667, 18.471796, 46.8, 48.566666, 74.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_3gnio"]
@@ -184,7 +200,7 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n6rp3"]
 _data = {
-&"RESET": SubResource("Animation_qhrbu"),
+&"RESET": SubResource("Animation_x0iuc"),
 &"play_dialogue": SubResource("Animation_3gnio")
 }
 
@@ -304,7 +320,7 @@ anchor_bottom = 0.3
 grow_horizontal = 0
 theme = SubResource("Theme_qosa4")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "Maeve Sanguina"
+text = "Lady Sanguina"
 horizontal_alignment = 1
 
 [node name="character_dialogue" type="RichTextLabel" parent="Panel" unique_id=1245692225]
@@ -343,4 +359,4 @@ expand_mode = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345789796]
 libraries/ = SubResource("AnimationLibrary_n6rp3")
 libraries/Internal = SubResource("AnimationLibrary_x0iuc")
-autoplay = &"play_dialogue"
+autoplay = &"RESET"
