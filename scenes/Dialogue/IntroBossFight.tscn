@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0i6icwttpxsm"]
 
 [ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/fonts/caslon-antique.bold.ttf" id="1_gdmr2"]
+[ext_resource type="Script" uid="uid://e0seq4hago85" path="res://scripts/dialogue triggers/boss_fight.gd" id="1_xuggq"]
 [ext_resource type="FontFile" uid="uid://cblv7wxa8o1pw" path="res://assets/fonts/caslon-antique.regular.ttf" id="2_w4sn0"]
 [ext_resource type="Texture2D" uid="uid://5g4dl30v6kko" path="res://assets/img/Character_Portraits/Sanguina_Mad.png" id="3_ruqul"]
 [ext_resource type="Texture2D" uid="uid://bqrdryb0kmrd1" path="res://assets/img/Character_Portraits/Sanguina_mocking.png" id="4_re6pe"]
@@ -121,27 +122,9 @@ tracks/6/keys = {
 }
 tracks/6/use_blend = true
 
-[sub_resource type="Animation" id="Animation_3gnio"]
-resource_name = "play_dialogue"
-length = 90.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/character_dialogue:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3.01, 4.01, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": ["Do-ya mind telling me what you think you’re doing by killing my men and barging into my territory?", "I don’t know if you’re new to this whole vampire lord thing but a calling card
-that doesn’t involve the final death", "is usually appreciated!", "I am not a vampire lord.", "You’re serious aren’t you.", "You don't remember who I am, I’ve come to put an end to you.", "If you’re of the undying vengeance sort I’m afraid more than a few know me in that regard."]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n6rp3"]
 _data = {
-&"RESET": SubResource("Animation_w4sn0"),
-&"play_dialogue": SubResource("Animation_3gnio")
+&"RESET": SubResource("Animation_w4sn0")
 }
 
 [sub_resource type="Animation" id="Animation_rqqaq"]
@@ -353,6 +336,8 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=198018426]
+process_mode = 3
+script = ExtResource("1_xuggq")
 
 [node name="Panel" type="Panel" parent="." unique_id=902228132]
 anchors_preset = -1
@@ -383,6 +368,7 @@ anchor_right = 0.85
 anchor_bottom = 0.9
 theme = SubResource("Theme_ruqul")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Do-ya mind telling me what you think you’re doing by killing my men and barging into my territory?"
 
 [node name="boss_portrait" type="TextureRect" parent="Panel" unique_id=54187847]
 layout_mode = 1
@@ -391,7 +377,7 @@ anchor_left = 0.86
 anchor_top = 0.1
 anchor_right = 0.98
 anchor_bottom = 0.9
-texture = ExtResource("7_nlf3p")
+texture = ExtResource("3_ruqul")
 expand_mode = 1
 
 [node name="character_portrait" type="TextureRect" parent="Panel" unique_id=244140263]
@@ -402,12 +388,14 @@ anchor_left = 0.02
 anchor_top = 0.1
 anchor_right = 0.14
 anchor_bottom = 0.9
-texture = ExtResource("8_kg1x8")
+texture = ExtResource("9_penex")
 expand_mode = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1616978385]
+process_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345789796]
+process_mode = 3
 libraries/ = SubResource("AnimationLibrary_n6rp3")
 libraries/Internal = SubResource("AnimationLibrary_nlf3p")
 autoplay = &"RESET"

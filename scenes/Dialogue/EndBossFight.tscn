@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8wnaf1t5u0nu"]
 
 [ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/fonts/caslon-antique.bold.ttf" id="1_lblfi"]
+[ext_resource type="Script" uid="uid://bphm5ifjatko4" path="res://scripts/dialogue triggers/game_end.gd" id="1_x0iuc"]
 [ext_resource type="FontFile" uid="uid://cblv7wxa8o1pw" path="res://assets/fonts/caslon-antique.regular.ttf" id="2_0oe06"]
 [ext_resource type="AudioStream" uid="uid://bpd530boe0k7" path="res://assets/audio/Game_end.mp3" id="3_ktec3"]
 [ext_resource type="Texture2D" uid="uid://5g4dl30v6kko" path="res://assets/img/Character_Portraits/Sanguina_Mad.png" id="3_undsk"]
@@ -301,6 +302,8 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=198018426]
+process_mode = 3
+script = ExtResource("1_x0iuc")
 
 [node name="Panel" type="Panel" parent="." unique_id=902228132]
 anchors_preset = -1
@@ -355,8 +358,16 @@ texture = ExtResource("4_x0iuc")
 expand_mode = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1616978385]
+process_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345789796]
+process_mode = 3
 libraries/ = SubResource("AnimationLibrary_n6rp3")
 libraries/Internal = SubResource("AnimationLibrary_x0iuc")
 autoplay = &"RESET"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2095596687]
+process_mode = 3
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.683

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://gd8myrclsxog"]
 
+[ext_resource type="Script" uid="uid://bglrw08weeuux" path="res://scripts/dialogue triggers/intro_trigger.gd" id="1_3hmmc"]
 [ext_resource type="PackedScene" uid="uid://b4kd8jpiem1mp" path="res://scenes/player/player.tscn" id="1_78alf"]
 [ext_resource type="Texture2D" uid="uid://j00mto6l7him" path="res://assets/img/Sky.png" id="1_q6b3p"]
 [ext_resource type="Texture2D" uid="uid://cuf8034k4ea7w" path="res://assets/img/FINALparalax_3.png" id="2_8gf4l"]
@@ -23,6 +24,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_day66")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_txm6t"]
 
 [node name="TestStage" type="Node2D" unique_id=1205755505]
+script = ExtResource("1_3hmmc")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1246208865]
 scroll_scale = Vector2(0.2, 1)

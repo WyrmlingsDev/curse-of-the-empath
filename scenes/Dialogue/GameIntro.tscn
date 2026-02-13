@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ci6pg8emv2gv0"]
 
-[ext_resource type="Script" uid="uid://mo1psw2hcuja" path="res://scripts/game_intro.gd" id="1_sujgv"]
+[ext_resource type="Script" uid="uid://mo1psw2hcuja" path="res://scripts/dialogue triggers/game_intro.gd" id="1_sujgv"]
 [ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/fonts/caslon-antique.bold.ttf" id="1_vwtjf"]
 [ext_resource type="Theme" uid="uid://cjcg5dildreok" path="res://assets/fonts/DialogueBoxTheme.tres" id="2_jouck"]
 [ext_resource type="Texture2D" uid="uid://bqrdryb0kmrd1" path="res://assets/img/Character_Portraits/Sanguina_mocking.png" id="3_lrjjw"]
@@ -301,6 +301,8 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=198018426]
+process_mode = 3
+layer = 10
 script = ExtResource("1_sujgv")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2032191683]
@@ -341,7 +343,6 @@ anchor_right = 0.85
 anchor_bottom = 0.9
 theme = ExtResource("2_jouck")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "Most people are lucky enough to die with their families when a band of vampires burns their village to the ground."
 
 [node name="enemy_portrait" type="TextureRect" parent="Panel" unique_id=1893540955]
 self_modulate = Color(0.13333334, 0.13333334, 0.13333334, 1)
