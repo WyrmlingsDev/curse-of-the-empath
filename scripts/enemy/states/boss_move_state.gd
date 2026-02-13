@@ -17,13 +17,13 @@ func physics_update(delta: float) -> void:
 			break
 				
 	var dist: float = enemy.global_position.distance_to(enemy.target_pos)
-	if dist <= 600:
-		enemy.velocity = Vector2.ZERO
-		enemy._set_state("attack")
+	if dist <= 300:
+		if randf() < 0.7:
+			enemy._set_state("attack")
+		else:
+			enemy._set_state("jump")
 		return
-	if dist <= 1000:
-		enemy._set_state("jump")
-		return
+
 	
 	var dir := (enemy.target_pos - enemy.global_position).normalized()
 	enemy.velocity = dir * enemy.speed

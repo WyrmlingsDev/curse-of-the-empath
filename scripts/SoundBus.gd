@@ -11,7 +11,7 @@ func _queue_sound(sound_name: String, sound_stream: AudioStream, _position: Vect
 	var sound_instance: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 	sound_instance.position = _position
 	sound_instance.stream = sound_stream
-	sound_instance.volume_db = -20.0
+	sound_instance.volume_db = -10.0
 	sound_instance.connect("finished", Callable(self, "_on_sound_finished").bind(sound_name, sound_instance))
 	add_child(sound_instance)
 	sound_instance.play()
@@ -24,7 +24,7 @@ func _queue_sound_at(sound_name: String, sound_stream: AudioStream, _position: V
 	var sound_instance: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 	sound_instance.position = _position
 	sound_instance.stream = sound_stream
-	sound_instance.volume_db = -20.0
+	sound_instance.volume_db = -10.0
 	sound_instance.connect("finished", Callable(self, "_on_sound_finished").bind(sound_name, sound_instance))
 	add_child(sound_instance)
 	sound_instance.play(_start_from)

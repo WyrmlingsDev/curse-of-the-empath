@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://kixruut6d178"]
+
+[ext_resource type="Texture2D" uid="uid://cj747cms3c4bt" path="res://assets/img/Cathedral_Ground (1).png" id="1_wp73p"]
+
+[node name="Floor" type="TextureRect" unique_id=1468138007]
+offset_left = -632.0
+offset_top = -217.0
+offset_right = 632.0
+offset_bottom = 215.0
+texture = ExtResource("1_wp73p")

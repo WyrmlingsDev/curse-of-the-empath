@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8wnaf1t5u0nu"]
 
-[ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/fonts/caslon-antique.bold.ttf" id="1_lblfi"]
-[ext_resource type="FontFile" uid="uid://cblv7wxa8o1pw" path="res://assets/fonts/caslon-antique.regular.ttf" id="2_0oe06"]
+[ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_lblfi"]
+[ext_resource type="FontFile" uid="uid://cblv7wxa8o1pw" path="res://assets/Fonts/caslon-antique.regular.ttf" id="2_0oe06"]
 [ext_resource type="AudioStream" uid="uid://bpd530boe0k7" path="res://assets/audio/Game_end.mp3" id="3_ktec3"]
 [ext_resource type="Texture2D" uid="uid://5g4dl30v6kko" path="res://assets/img/Character_Portraits/Sanguina_Mad.png" id="3_undsk"]
 [ext_resource type="Texture2D" uid="uid://dhdinjm5w6uln" path="res://assets/img/Character_Portraits/Vampire_angry.png" id="4_x0iuc"]

@@ -24,7 +24,7 @@ func enter(prev_state: EnemyState) -> void:
 	
 	# lazy timer
 	enemy.animation.play("idle")
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(2).timeout
 	enemy._set_state("idle")
 
 func exit(next_state: EnemyState) -> void:

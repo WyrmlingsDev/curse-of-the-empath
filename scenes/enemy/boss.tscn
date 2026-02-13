@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://g0iojcquou2g" path="res://assets/sprite/Sanguina-Land.png" id="7_mibu8"]
 [ext_resource type="AudioStream" uid="uid://cs51peuv3y50a" path="res://assets/sfx/copy_D8FC914F-6104-4750-BD2C-30A5C61EA505 (1).mp3" id="7_yqmul"]
 [ext_resource type="AudioStream" uid="uid://b16x6qt3as82r" path="res://assets/sfx/copy_182D5F93-0FCB-4532-ADF9-14D66F6E0BFD.mp3" id="8_ru2p3"]
+[ext_resource type="PackedScene" uid="uid://c8wnaf1t5u0nu" path="res://scenes/Dialogue/EndBossFight.tscn" id="9_uf7ql"]
+[ext_resource type="Texture2D" uid="uid://f3haut4mcjbh" path="res://assets/img/HealthbarS.png" id="16_50kjt"]
+[ext_resource type="Texture2D" uid="uid://dgrqctuo5ja4s" path="res://assets/img/Healthbar.png" id="16_pm44g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofukx"]
 atlas = ExtResource("1_40x6t")
@@ -281,12 +284,21 @@ size = Vector2(374.25, 525)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58iuw"]
 size = Vector2(194, 215.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysybv"]
+atlas = ExtResource("16_pm44g")
+region = Rect2(3247.6567, 1346, 4432.3433, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlix0"]
+atlas = ExtResource("16_pm44g")
+region = Rect2(3247.657, 1091, 4432.343, 162)
+
 [node name="Boss" type="CharacterBody2D" unique_id=1632559621 groups=["Enemy"]]
 collision_layer = 4
 script = ExtResource("1_ee08l")
 attack_sounds = Array[AudioStreamMP3]([ExtResource("2_hmj6a"), ExtResource("3_ru2p3"), ExtResource("4_50kjt")])
 damage_sounds = Array[AudioStreamMP3]([ExtResource("5_pm44g"), ExtResource("6_uf7ql"), ExtResource("7_yqmul")])
 jump_attack_sound = ExtResource("8_ru2p3")
+boss_death_scene = ExtResource("9_uf7ql")
 enemy_type = "Boss"
 max_health = 500.0
 current_health = 500.0
@@ -296,7 +308,7 @@ attack_distance = 600.0
 position = Vector2(-122, -311)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_50kjt")
-animation = &"land"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249242713]
@@ -352,3 +364,27 @@ position = Vector2(-2, 39.75)
 shape = SubResource("RectangleShape2D_58iuw")
 disabled = true
 debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=654859671]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI" unique_id=1160732302]
+offset_left = 1054.0001
+offset_top = 104.00002
+offset_right = 5486.0
+offset_bottom = 267.00003
+rotation = -0.0017453292
+scale = Vector2(0.1, 0.1)
+max_value = 500.0
+value = 500.0
+texture_under = SubResource("AtlasTexture_ysybv")
+texture_progress = SubResource("AtlasTexture_hlix0")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=1239413224]
+offset_left = 1193.9999
+offset_top = -13.0
+offset_right = 9835.0
+offset_bottom = 4946.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("16_50kjt")
+metadata/_edit_use_anchors_ = true

@@ -10,8 +10,8 @@ func _ready():
 	self.body_entered.connect(_on_body_entered)
 
 #Triggers event when player enters
-func _on_body_entered(_body: CharacterBody2D):
-	if "Player" in Player and not SceneManager.boss_intro_seen:
+func _on_body_entered(body: Node2D):
+	if body.is_in_group("Player") and not SceneManager.boss_intro_seen:
 		SceneManager.boss_intro_seen = true
 		spawn_dialogue(boss_dialogue_scene)
 

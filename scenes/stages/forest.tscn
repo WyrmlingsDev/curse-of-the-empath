@@ -1,0 +1,176 @@
+[gd_scene format=4 uid="uid://gd8myrclsxog"]
+
+[ext_resource type="Script" uid="uid://bglrw08weeuux" path="res://scripts/dialogue triggers/intro_trigger.gd" id="1_4550o"]
+[ext_resource type="PackedScene" uid="uid://ci6pg8emv2gv0" path="res://scenes/Dialogue/GameIntro.tscn" id="2_rv151"]
+[ext_resource type="Texture2D" uid="uid://j00mto6l7him" path="res://assets/img/Sky.png" id="3_iu3o0"]
+[ext_resource type="Texture2D" uid="uid://corv042cvjp7t" path="res://assets/img/FINALparalax_1.png" id="4_ef3uw"]
+[ext_resource type="Texture2D" uid="uid://dfxo3rk48hpuj" path="res://assets/img/FINALparalax_2.png" id="5_are4b"]
+[ext_resource type="Texture2D" uid="uid://cuf8034k4ea7w" path="res://assets/img/FINALparalax_3.png" id="6_7rt80"]
+[ext_resource type="PackedScene" uid="uid://11f0efq5u1qh" path="res://assets/img/floor.tscn" id="7_o6alb"]
+[ext_resource type="PackedScene" uid="uid://b4kd8jpiem1mp" path="res://scenes/player/player.tscn" id="8_sq655"]
+[ext_resource type="PackedScene" uid="uid://cpp648uo7nv55" path="res://scenes/enemy/soldier.tscn" id="9_tq47n"]
+[ext_resource type="PackedScene" uid="uid://c0jpw6a8jg5y5" path="res://scenes/enemy/mage.tscn" id="10_eh62b"]
+[ext_resource type="PackedScene" uid="uid://bylgk8mpv4doq" path="res://scenes/enemy/demon.tscn" id="11_xf6fn"]
+[ext_resource type="Script" uid="uid://bhm714bftborb" path="res://scripts/teleport.gd" id="12_rv151"]
+[ext_resource type="AudioStream" uid="uid://jrlrtvq61rb1" path="res://assets/tracks/An Ode to Fez 2 - Forest Track.mp3" id="13_iu3o0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_txm6t"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rv151"]
+scenes/1/scene = ExtResource("7_o6alb")
+
+[sub_resource type="TileSet" id="TileSet_v3f42"]
+tile_size = Vector2i(3791, 1288)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 7
+sources/0 = SubResource("TileSetScenesCollectionSource_rv151")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iu3o0"]
+size = Vector2(753, 598.98804)
+
+[node name="Forest" type="Node2D" unique_id=1205755505]
+script = ExtResource("1_4550o")
+game_intro = ExtResource("2_rv151")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1246208865]
+scroll_scale = Vector2(0.2, 1)
+scroll_offset = Vector2(0, 5)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1201906216]
+position = Vector2(990.00006, 411)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_iu3o0")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1821029063]
+scroll_scale = Vector2(0.2, 1)
+scroll_offset = Vector2(0, -17)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=1431458867]
+position = Vector2(990.00006, 411)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_ef3uw")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=945898556]
+scroll_scale = Vector2(0.3, 1)
+scroll_offset = Vector2(0, -17)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1570651675]
+position = Vector2(990.00006, 411)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_are4b")
+
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=710524613]
+scroll_scale = Vector2(0.4, 1)
+scroll_offset = Vector2(0, -17)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D5" unique_id=293517060]
+position = Vector2(990.00006, 411)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_7rt80")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=779774905]
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D4" unique_id=1850870203]
+offset_top = 1107.0
+offset_right = 1982.0
+offset_bottom = 1352.0
+color = Color(0, 0, 0, 1)
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1224698481]
+position = Vector2(0, 953)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1450979854]
+shape = SubResource("WorldBoundaryShape2D_txm6t")
+
+[node name="Right" type="StaticBody2D" parent="." unique_id=389217552]
+position = Vector2(27355, 594)
+rotation = 4.712389
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right" unique_id=1543735092]
+position = Vector2(0, -16)
+shape = SubResource("WorldBoundaryShape2D_txm6t")
+
+[node name="Left" type="StaticBody2D" parent="." unique_id=756791036]
+position = Vector2(-1904, 953)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left" unique_id=1731914369]
+shape = SubResource("WorldBoundaryShape2D_txm6t")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=876632587]
+position = Vector2(-2, 342.99994)
+scale = Vector2(0.15, 0.15)
+tile_map_data = PackedByteArray("AAAAAAMAAAAAAAAAAQABAAMAAAAAAAAAAQD//wMAAAAAAAAAAQD+/wMAAAAAAAAAAQD9/wMAAAAAAAAAAQACAAMAAAAAAAAAAQADAAMAAAAAAAAAAQAEAAMAAAAAAAAAAQAFAAMAAAAAAAAAAQAGAAMAAAAAAAAAAQAHAAMAAAAAAAAAAQAIAAMAAAAAAAAAAQAJAAMAAAAAAAAAAQD8/wMAAAAAAAAAAQD7/wMAAAAAAAAAAQD6/wMAAAAAAAAAAQD5/wMAAAAAAAAAAQD4/wMAAAAAAAAAAQAKAAMAAAAAAAAAAQALAAMAAAAAAAAAAQAMAAMAAAAAAAAAAQANAAMAAAAAAAAAAQAOAAMAAAAAAAAAAQAPAAMAAAAAAAAAAQAQAAMAAAAAAAAAAQARAAMAAAAAAAAAAQASAAMAAAAAAAAAAQATAAMAAAAAAAAAAQAUAAMAAAAAAAAAAQAVAAMAAAAAAAAAAQAWAAMAAAAAAAAAAQAXAAMAAAAAAAAAAQAYAAMAAAAAAAAAAQAZAAMAAAAAAAAAAQAaAAMAAAAAAAAAAQAbAAMAAAAAAAAAAQAcAAMAAAAAAAAAAQAdAAMAAAAAAAAAAQAeAAMAAAAAAAAAAQAfAAMAAAAAAAAAAQAgAAMAAAAAAAAAAQAhAAMAAAAAAAAAAQAiAAMAAAAAAAAAAQAjAAMAAAAAAAAAAQAkAAMAAAAAAAAAAQAlAAMAAAAAAAAAAQAmAAMAAAAAAAAAAQAnAAMAAAAAAAAAAQAoAAMAAAAAAAAAAQApAAMAAAAAAAAAAQAqAAMAAAAAAAAAAQArAAMAAAAAAAAAAQAsAAMAAAAAAAAAAQAtAAMAAAAAAAAAAQD3/wMAAAAAAAAAAQD2/wMAAAAAAAAAAQD1/wMAAAAAAAAAAQD0/wMAAAAAAAAAAQAuAAMAAAAAAAAAAQAvAAMAAAAAAAAAAQAwAAMAAAAAAAAAAQAxAAMAAAAAAAAAAQAyAAMAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_v3f42")
+
+[node name="Player" parent="." unique_id=609366961 instance=ExtResource("8_sq655")]
+position = Vector2(-960, 770)
+
+[node name="Soldier" parent="." unique_id=1632559621 instance=ExtResource("9_tq47n")]
+position = Vector2(1769, 694)
+attack_distance = 200.0
+
+[node name="Mage" parent="." unique_id=132183136 instance=ExtResource("10_eh62b")]
+position = Vector2(5487, 724)
+
+[node name="Demon" parent="." unique_id=729504127 instance=ExtResource("11_xf6fn")]
+position = Vector2(3508, 710)
+attack_distance = 200.0
+
+[node name="Soldier2" parent="." unique_id=1159827374 instance=ExtResource("9_tq47n")]
+position = Vector2(7357, 706)
+
+[node name="Soldier3" parent="." unique_id=1317729557 instance=ExtResource("9_tq47n")]
+position = Vector2(8996, 707)
+
+[node name="Mage2" parent="." unique_id=378773334 instance=ExtResource("10_eh62b")]
+position = Vector2(10811, 713)
+
+[node name="Demon2" parent="." unique_id=2008688274 instance=ExtResource("11_xf6fn")]
+position = Vector2(12501, 718)
+
+[node name="Soldier4" parent="." unique_id=327894351 instance=ExtResource("9_tq47n")]
+position = Vector2(14277, 650)
+
+[node name="Demon3" parent="." unique_id=1084410693 instance=ExtResource("11_xf6fn")]
+position = Vector2(15744, 580)
+
+[node name="Demon4" parent="." unique_id=895419327 instance=ExtResource("11_xf6fn")]
+position = Vector2(17707, 575)
+
+[node name="Demon5" parent="." unique_id=227554541 instance=ExtResource("11_xf6fn")]
+position = Vector2(21588, 645)
+
+[node name="Soldier5" parent="." unique_id=1731467667 instance=ExtResource("9_tq47n")]
+position = Vector2(19556, 582)
+
+[node name="Soldier6" parent="." unique_id=1386293466 instance=ExtResource("9_tq47n")]
+position = Vector2(23639, 546)
+
+[node name="Mage3" parent="." unique_id=1982401299 instance=ExtResource("10_eh62b")]
+position = Vector2(25555, 582)
+
+[node name="Teleport" type="Area2D" parent="." unique_id=856527879]
+position = Vector2(26681.617, 756.98804)
+collision_mask = 2
+script = ExtResource("12_rv151")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport" unique_id=1940692309]
+position = Vector2(281.8828, -132.98804)
+shape = SubResource("RectangleShape2D_iu3o0")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1461199023]
+stream = ExtResource("13_iu3o0")
+volume_db = -18.542
+autoplay = true
+parameters/looping = true

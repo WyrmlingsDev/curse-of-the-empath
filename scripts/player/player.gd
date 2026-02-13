@@ -59,15 +59,15 @@ func _physics_process(delta: float) -> void:
 		
 	if is_lifestealing and lifesteal_timer >= 10:
 		is_lifestealing = false
+		lifesteal_timer = 0.0
 		lifesteal_noise.stop()
 		
 	if lifesteal_progress >= 100 and Input.is_action_just_pressed("Lifesteal"):
 		lifesteal_progress = 0
 		lifesteal_bar.value = lifesteal_progress
+		lifesteal_timer = 0.0 
 		is_lifestealing = true
 		lifesteal_noise.play()
-
-	_apply_i_frames(delta)
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta

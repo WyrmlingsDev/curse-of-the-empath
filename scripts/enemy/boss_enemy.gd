@@ -8,8 +8,11 @@ class_name Boss
 @export var attack_sounds: Array[AudioStreamMP3]
 @export var damage_sounds: Array[AudioStreamMP3]
 @export var jump_attack_sound: AudioStreamMP3
+@export var boss_death_scene: PackedScene
 
-func _ready() -> void:	
+@onready var healthbar = $UI/TextureProgressBar
+
+func _ready() -> void:
 	states = {
 		"idle": preload("res://scripts/enemy/states/boss_idle_state.gd").new(),
 		"move": preload("res://scripts/enemy/states/boss_move_state.gd").new(),
@@ -47,5 +50,34 @@ func _check_damage_sources(_delta: Variant) -> void:
 	for source in hurtbox.get_overlapping_areas(): 
 		if source.is_in_group(damage_source) and source.is_in_group("Player"): 
 			EventBus.emit_signal("on_enemy_damage", self, source)
-			_take_damage(source, 10.0) 
+			_take_damage(source, 10.0)
+			healthbar.value = current_health
 			i_frame_timer = i_frame / 1000.0
+
+func _take_damage(source: Variant, amount: float) -> void:
+	current_health -= amount
+
+	if current_health <= 0:
+		if not SceneManager.ending_seen:
+			get_tree().paused = true
+			SceneManager.ending_seen = true
+			
+			get_tree().current_scene.get_node("Player/UI/TextureProgressBar").visible = false
+			get_tree().current_scene.get_node("Player/UI/ProgressBar").visible = false
+			get_tree().current_scene.get_node("Player/UI/TextureRect").visible = false
+						
+			get_tree().current_scene.get_node("Boss/UI/TextureProgressBar").visible = false
+			get_tree().current_scene.get_node("Boss/UI/TextureRect").visible = false
+			
+			if boss_death_scene:
+				var dialogue = boss_death_scene.instantiate()
+				get_tree().root.add_child(dialogue)
+				
+				var anim_player: AnimationPlayer = dialogue.get_node("AnimationPlayer")
+				anim_player.play("play_dialogue")
+				
+				await anim_player.animation_finished
+				dialogue.queue_free()
+				get_tree().paused = false
+
+		

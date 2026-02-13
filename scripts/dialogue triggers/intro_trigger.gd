@@ -13,3 +13,4 @@ func _ready():
 func spawn_dialogue(scene):
 	var instance = scene.instantiate()
 	get_tree().root.add_child.call_deferred(instance)
+ 
