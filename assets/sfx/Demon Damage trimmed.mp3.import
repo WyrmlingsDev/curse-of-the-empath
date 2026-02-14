@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckqkj7ne7dno8"
+path="res://.godot/imported/Demon Damage trimmed.mp3-8ce06405ffa4acfac9e449457c7d250d.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Demon Damage trimmed.mp3"
+dest_files=["res://.godot/imported/Demon Damage trimmed.mp3-8ce06405ffa4acfac9e449457c7d250d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

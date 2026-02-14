@@ -1,0 +1,434 @@
+[gd_scene format=3 uid="uid://c8wnaf1t5u0nu"]
+
+[ext_resource type="FontFile" uid="uid://7qqeofoctjp5" path="res://assets/Fonts/caslon-antique.bold.ttf" id="1_lblfi"]
+[ext_resource type="FontFile" uid="uid://cblv7wxa8o1pw" path="res://assets/Fonts/caslon-antique.regular.ttf" id="2_0oe06"]
+[ext_resource type="AudioStream" uid="uid://bpd530boe0k7" path="res://assets/audio/Game_end.mp3" id="3_ktec3"]
+[ext_resource type="Texture2D" uid="uid://5g4dl30v6kko" path="res://assets/img/Character_Portraits/Sanguina_Mad.png" id="3_undsk"]
+[ext_resource type="Texture2D" uid="uid://dhdinjm5w6uln" path="res://assets/img/Character_Portraits/Vampire_angry.png" id="4_x0iuc"]
+[ext_resource type="Texture2D" uid="uid://v86kr81hewkr" path="res://assets/img/Character_Portraits/Sanguina_Neutral.png" id="5_4gu03"]
+[ext_resource type="Texture2D" uid="uid://cpppu0cwwundm" path="res://assets/img/Character_Portraits/Vampire_neutral.png" id="6_c6hc1"]
+[ext_resource type="AudioStream" uid="uid://bcbqabymphon8" path="res://assets/audio/ending transition sound.mp3" id="6_f0k4s"]
+[ext_resource type="VideoStream" uid="uid://dfsiwi2jvck88" path="res://assets/cutscenes/ending clip1.ogv" id="9_c6hc1"]
+[ext_resource type="VideoStream" uid="uid://ww6pmvdnt77u" path="res://assets/cutscenes/ending clip2.ogv" id="10_f0k4s"]
+
+[sub_resource type="Theme" id="Theme_qosa4"]
+default_font = ExtResource("1_lblfi")
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_ktec3"]
+default_font = ExtResource("2_0oe06")
+default_font_size = 45
+
+[sub_resource type="Animation" id="Animation_x0iuc"]
+resource_name = "play_dialogue"
+length = 75.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/character_dialogue:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.366667, 8.533333, 10.233333, 17, 20.100002, 23.131554, 25.333332, 34.566666, 39.466667, 47, 53.399998),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "What are you doing?", "Unhand me!", "YOU CANT DO THIS, YOU’LL DIE TOO, OR ARE YOU TOO STUPID TO REALIZE THAT?", "THERE IS NO AFTERLIFE FOR A VAMPIRE!", "YOU'LL NEVER SEE YOUR FAMILY AGAIN!", "", "and it felt like a weight was lifted off my chest, knowing they’d never see me like this.", "It’s a beautiful morning out,", "but you know me too well Feyore….", "I’m going to sleep through it.", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/character_name:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.333333, 23.131554, 24.2, 52.8, 53.399998),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "Lady Sanguina", "", "Vampire", "Vampire", ""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/boss_portrait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.7333336, 8.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_4gu03"), ExtResource("3_undsk")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/player_portrait:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.333333, 23.5, 52.666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_x0iuc"), ExtResource("6_c6hc1"), ExtResource("6_c6hc1")]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ending_dialogue")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ktec3")
+}],
+"times": PackedFloat32Array(5.366667)
+}
+tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/boss_portrait:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6333332, 4.1666665, 5.333333, 22.7, 23.2, 74.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/player_portrait:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.23333311, 22.8, 23.80513, 52.13333, 53.899998, 74.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("clip1:paused")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("clip2:paused")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(-0.06666667, 0, 4, 55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
+}
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("sword_transition")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_f0k4s")
+}],
+"times": PackedFloat32Array(2.26)
+}
+tracks/9/use_blend = true
+
+[sub_resource type="Animation" id="Animation_3gnio"]
+resource_name = "play_dialogue"
+length = 75.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/character_dialogue:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 3.1999998, 4.8999996, 11.666667, 14.766666, 18.933332, 29.233334, 34.133335, 41.666668, 48.066666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["What are you doing?", "Unhand me!", "YOU CANT DO THIS, YOU’LL DIE TOO, OR ARE YOU TOO STUPID TO REALIZE THAT?", "THERE IS NO AFTERLIFE FOR A VAMPIRE!", "YOU'LL NEVER SEE YOUR FAMILY AGAIN!", "and it felt like a weight was lifted off my chest, knowing they’d never see me like this.", "It’s a beautiful morning out,", "but you know me too well Feyore….", "I’m going to sleep through it.", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/character_name:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 18.866667, 47.466667, 48.066666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["Lady Sanguina", "Vampire", "Vampire", ""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/boss_portrait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 3.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_4gu03"), ExtResource("3_undsk")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/player_portrait:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 18.166666, 47.333332),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_x0iuc"), ExtResource("6_c6hc1"), ExtResource("6_c6hc1")]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ending_dialogue")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ktec3")
+}],
+"times": PackedFloat32Array(0.099999905)
+}
+tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/boss_portrait:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 17.366667, 18.066668, 74.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/player_portrait:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.16666603, 17.466667, 18.471796, 46.8, 48.566666, 74.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6rp3"]
+_data = {
+&"RESET": SubResource("Animation_x0iuc"),
+&"play_dialogue": SubResource("Animation_3gnio")
+}
+
+[sub_resource type="Animation" id="Animation_undsk"]
+resource_name = "play_dialogue"
+length = 75.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/character_dialogue:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.36666667, 3.1999998, 4.8999996, 11.666667, 14.766666, 18.933332, 29.233334, 34.133335, 41.666668, 48.066666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["What are you doing?", "Unhand me!", "YOU CANT DO THIS, YOU’LL DIE TOO, OR ARE YOU TOO STUPID TO REALIZE THAT?", "THERE IS NO AFTERLIFE FOR A VAMPIRE!", "YOU'LL NEVER SEE YOUR FAMILY AGAIN!", "and it felt like a weight was lifted off my chest, knowing they’d never see me like this.", "It’s a beautiful morning out,", "but you know me too well Feyore….", "I’m going to sleep through it.", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/character_name:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 18.866667, 47.466667, 48.066666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["Lady Sanguina", "Vampire", "Vampire", ""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/boss_portrait:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 3.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_4gu03"), ExtResource("3_undsk")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/player_portrait:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 18.166666, 47.333332),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_x0iuc"), ExtResource("6_c6hc1"), ExtResource("6_c6hc1")]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ending_dialogue")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ktec3")
+}],
+"times": PackedFloat32Array(0.099999905)
+}
+tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/boss_portrait:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 17.366667, 18.066668, 74.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/player_portrait:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.16666603, 17.466667, 18.471796, 46.8, 48.566666, 74.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 1), Color(0.13333334, 0.13333334, 0.13333334, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x0iuc"]
+_data = {
+&"game_end": SubResource("Animation_undsk")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=198018426]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1125874117]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=902228132]
+anchors_preset = -1
+anchor_top = 0.687
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="character_name" type="RichTextLabel" parent="Panel" unique_id=284041786]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.01
+anchor_right = 0.85
+anchor_bottom = 0.3
+grow_horizontal = 0
+theme = SubResource("Theme_qosa4")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+
+[node name="character_dialogue" type="RichTextLabel" parent="Panel" unique_id=1245692225]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.3
+anchor_right = 0.85
+anchor_bottom = 0.9
+theme = SubResource("Theme_ktec3")
+
+[node name="boss_portrait" type="TextureRect" parent="Panel" unique_id=1210270790]
+self_modulate = Color(0.13333334, 0.13333334, 0.13333334, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.86
+anchor_top = 0.1
+anchor_right = 0.98
+anchor_bottom = 0.9
+texture = ExtResource("5_4gu03")
+expand_mode = 1
+
+[node name="player_portrait" type="TextureRect" parent="Panel" unique_id=1463399525]
+self_modulate = Color(0.13333334, 0.13333334, 0.13333334, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.1
+anchor_right = 0.14
+anchor_bottom = 0.9
+texture = ExtResource("4_x0iuc")
+expand_mode = 1
+
+[node name="ending_dialogue" type="AudioStreamPlayer2D" parent="." unique_id=1616978385]
+process_mode = 3
+
+[node name="sword_transition" type="AudioStreamPlayer2D" parent="." unique_id=1643319544]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345789796]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_n6rp3")
+libraries/Internal = SubResource("AnimationLibrary_x0iuc")
+autoplay = &"RESET"
+
+[node name="clip1" type="VideoStreamPlayer" parent="." unique_id=1276042031]
+process_mode = 3
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.68700004
+stream = ExtResource("9_c6hc1")
+autoplay = true
+expand = true
+
+[node name="clip2" type="VideoStreamPlayer" parent="." unique_id=2095596687]
+process_mode = 3
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.687
+stream = ExtResource("10_f0k4s")
+autoplay = true
+paused = true
+expand = true

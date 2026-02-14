@@ -1,0 +1,114 @@
+[gd_scene format=4 uid="uid://dphdavfea5c12"]
+
+[ext_resource type="Texture2D" uid="uid://b5ei1618q0jeg" path="res://assets/img/Cathedral.png" id="1_mwngy"]
+[ext_resource type="PackedScene" uid="uid://kixruut6d178" path="res://assets/img/cath_floor.tscn" id="2_ensgv"]
+[ext_resource type="Texture2D" uid="uid://bpinr45ewkusi" path="res://assets/img/Character_Portraits/Arenapillars.png" id="2_vvnqt"]
+[ext_resource type="PackedScene" uid="uid://b4kd8jpiem1mp" path="res://scenes/player/player.tscn" id="3_ensgv"]
+[ext_resource type="Texture2D" uid="uid://dvu8isidtwbot" path="res://assets/img/Bossarena.png" id="4_y8hrv"]
+[ext_resource type="PackedScene" uid="uid://bl8m8f80yg8rf" path="res://scenes/enemy/boss.tscn" id="5_gqch8"]
+[ext_resource type="Script" uid="uid://cfny36giqddbm" path="res://scripts/dialogue triggers/boss_fight_trigger.gd" id="7_238qc"]
+[ext_resource type="PackedScene" uid="uid://c0i6icwttpxsm" path="res://scenes/Dialogue/IntroBossFight.tscn" id="8_mdq8e"]
+[ext_resource type="AudioStream" uid="uid://bad8olq6lawul" path="res://assets/tracks/boss_fight.wav" id="9_etk3s"]
+[ext_resource type="Script" uid="uid://c1rwxw4vxhy28" path="res://scripts/music.gd" id="10_aidxn"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vvnqt"]
+scenes/1/scene = ExtResource("2_ensgv")
+
+[sub_resource type="TileSet" id="TileSet_gqch8"]
+tile_size = Vector2i(1264, 429)
+sources/0 = SubResource("TileSetScenesCollectionSource_vvnqt")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mwngy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gqch8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdq8e"]
+size = Vector2(753, 598.98804)
+
+[node name="Cathedral" type="Node2D" unique_id=201353752]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=182233090]
+position = Vector2(1044, 373.00003)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_mwngy")
+
+[node name="BG2" type="Sprite2D" parent="." unique_id=102165859]
+position = Vector2(-1482.9998, 373)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_mwngy")
+
+[node name="BG3" type="Sprite2D" parent="." unique_id=11902075]
+position = Vector2(3570.9998, 373)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_mwngy")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1006497130]
+position = Vector2(856, 640.00006)
+scale = Vector2(0.2, 0.2)
+tile_map_data = PackedByteArray("AAAAAAMAAAAAAAAAAQABAAMAAAAAAAAAAQACAAMAAAAAAAAAAQACAAQAAAAAAAAAAQABAAQAAAAAAAAAAQAAAAQAAAAAAAAAAQD//wQAAAAAAAAAAQD//wMAAAAAAAAAAQD+/wMAAAAAAAAAAQD+/wQAAAAAAAAAAQADAAMAAAAAAAAAAQADAAQAAAAAAAAAAQD9/wMAAAAAAAAAAQD9/wQAAAAAAAAAAQD8/wMAAAAAAAAAAQD7/wMAAAAAAAAAAQD6/wMAAAAAAAAAAQD5/wMAAAAAAAAAAQD4/wMAAAAAAAAAAQD4/wQAAAAAAAAAAQD5/wQAAAAAAAAAAQD6/wQAAAAAAAAAAQD7/wQAAAAAAAAAAQD8/wQAAAAAAAAAAQAEAAQAAAAAAAAAAQAFAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAHAAQAAAAAAAAAAQAHAAMAAAAAAAAAAQAGAAMAAAAAAAAAAQAFAAMAAAAAAAAAAQAEAAMAAAAAAAAAAQAIAAMAAAAAAAAAAQAIAAQAAAAAAAAAAQD//wUAAAAAAAAAAQD+/wUAAAAAAAAAAQD9/wUAAAAAAAAAAQAAAAUAAAAAAAAAAQACAAUAAAAAAAAAAQAEAAUAAAAAAAAAAQADAAUAAAAAAAAAAQAFAAUAAAAAAAAAAQABAAUAAAAAAAAAAQAIAAUAAAAAAAAAAQAHAAUAAAAAAAAAAQAGAAUAAAAAAAAAAQD8/wUAAAAAAAAAAQD7/wUAAAAAAAAAAQD6/wUAAAAAAAAAAQD3/wQAAAAAAAAAAQD2/wQAAAAAAAAAAQD2/wMAAAAAAAAAAQD3/wMAAAAAAAAAAQD2/wUAAAAAAAAAAQD3/wUAAAAAAAAAAQD4/wUAAAAAAAAAAQD5/wUAAAAAAAAAAQAJAAUAAAAAAAAAAQAJAAQAAAAAAAAAAQAJAAMAAAAAAAAAAQAKAAMAAAAAAAAAAQAKAAQAAAAAAAAAAQAKAAUAAAAAAAAAAQALAAMAAAAAAAAAAQAMAAMAAAAAAAAAAQANAAMAAAAAAAAAAQAOAAMAAAAAAAAAAQAPAAMAAAAAAAAAAQAQAAMAAAAAAAAAAQARAAMAAAAAAAAAAQARAAQAAAAAAAAAAQARAAUAAAAAAAAAAQAQAAUAAAAAAAAAAQAPAAUAAAAAAAAAAQAOAAUAAAAAAAAAAQANAAUAAAAAAAAAAQAMAAUAAAAAAAAAAQALAAUAAAAAAAAAAQALAAQAAAAAAAAAAQANAAQAAAAAAAAAAQAOAAQAAAAAAAAAAQAPAAQAAAAAAAAAAQAQAAQAAAAAAAAAAQAMAAQAAAAAAAAAAQD1/wQAAAAAAAAAAQD0/wMAAAAAAAAAAQDz/wMAAAAAAAAAAQDy/wMAAAAAAAAAAQDx/wMAAAAAAAAAAQDw/wMAAAAAAAAAAQDw/wQAAAAAAAAAAQDx/wQAAAAAAAAAAQDy/wQAAAAAAAAAAQDz/wQAAAAAAAAAAQD0/wQAAAAAAAAAAQD1/wMAAAAAAAAAAQD1/wUAAAAAAAAAAQD0/wUAAAAAAAAAAQDz/wUAAAAAAAAAAQDy/wUAAAAAAAAAAQDx/wUAAAAAAAAAAQDw/wUAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_gqch8")
+
+[node name="Pillars" type="Sprite2D" parent="." unique_id=1373170687]
+position = Vector2(1044.0001, 413)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_vvnqt")
+
+[node name="Pillars3" type="Sprite2D" parent="." unique_id=1613858272]
+position = Vector2(4156, 413)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_vvnqt")
+
+[node name="Pillars2" type="Sprite2D" parent="." unique_id=1589065973]
+position = Vector2(-1796.9999, 411.00003)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_vvnqt")
+
+[node name="Bossarena" type="Sprite2D" parent="." unique_id=1403996766]
+position = Vector2(970, 629)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_y8hrv")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1342515479]
+position = Vector2(0, 953)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=231183009]
+shape = SubResource("WorldBoundaryShape2D_mwngy")
+
+[node name="Right" type="StaticBody2D" parent="." unique_id=1658142822]
+position = Vector2(3344, 682)
+rotation = -1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right" unique_id=912208485]
+position = Vector2(0, -16)
+shape = SubResource("WorldBoundaryShape2D_gqch8")
+
+[node name="Left" type="StaticBody2D" parent="." unique_id=235476221]
+position = Vector2(-1056, 769)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left" unique_id=437127508]
+shape = SubResource("WorldBoundaryShape2D_gqch8")
+
+[node name="Player" parent="." unique_id=609366961 instance=ExtResource("3_ensgv")]
+position = Vector2(552, 779)
+
+[node name="Boss" parent="." unique_id=1632559621 instance=ExtResource("5_gqch8")]
+position = Vector2(1428, 808)
+
+[node name="Trigger" type="Area2D" parent="." unique_id=1317191793]
+position = Vector2(224, 851)
+collision_mask = 2
+script = ExtResource("7_238qc")
+boss_dialogue_scene = ExtResource("8_mdq8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=329846862]
+position = Vector2(281.8828, -132.98804)
+shape = SubResource("RectangleShape2D_mdq8e")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=16063671]
+stream = ExtResource("9_etk3s")
+volume_db = -10.23
+autoplay = true
+script = ExtResource("10_aidxn")
+
+[connection signal="finished" from="Music" to="Music" method="_on_finished"]

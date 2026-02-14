@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://c0jpw6a8jg5y5"]
+
+[ext_resource type="Texture2D" uid="uid://bx8q0sks2htyc" path="res://assets/sprite/Mage-Attack.png" id="1_er4io"]
+[ext_resource type="Script" uid="uid://bvaok0o35dxbm" path="res://scripts/enemy/mage_enemy.gd" id="1_l527s"]
+[ext_resource type="AudioStream" uid="uid://10kx4r4sbuj3" path="res://assets/sfx/Casting Mage trimmed (1).mp3" id="2_8rfdh"]
+[ext_resource type="Texture2D" uid="uid://iqthufbqg6rw" path="res://assets/sprite/Mage-Damage.png" id="2_l527s"]
+[ext_resource type="AudioStream" uid="uid://putjhrxykot3" path="res://assets/sfx/Damage Mage trimmed.mp3" id="3_bg0nf"]
+[ext_resource type="Texture2D" uid="uid://dmg7miw6uxaq1" path="res://assets/sprite/Mage-Idle.png" id="3_whvh0"]
+[ext_resource type="AudioStream" uid="uid://e5nlwu4v4kd5" path="res://assets/sfx/Death Mage MK2 trimmed.mp3" id="4_ymv8u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o10pu"]
+atlas = ExtResource("1_er4io")
+region = Rect2(0, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rfdh"]
+atlas = ExtResource("1_er4io")
+region = Rect2(1920, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg0nf"]
+atlas = ExtResource("1_er4io")
+region = Rect2(3840, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymv8u"]
+atlas = ExtResource("1_er4io")
+region = Rect2(5760, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv1cq"]
+atlas = ExtResource("1_er4io")
+region = Rect2(7680, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30b1m"]
+atlas = ExtResource("2_l527s")
+region = Rect2(0, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmatt"]
+atlas = ExtResource("2_l527s")
+region = Rect2(1920, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at166"]
+atlas = ExtResource("2_l527s")
+region = Rect2(3840, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0sfw"]
+atlas = ExtResource("3_whvh0")
+region = Rect2(0, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mftfy"]
+atlas = ExtResource("3_whvh0")
+region = Rect2(1920, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_483vk"]
+atlas = ExtResource("3_whvh0")
+region = Rect2(3840, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ow5b"]
+atlas = ExtResource("3_whvh0")
+region = Rect2(5760, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0vv5"]
+atlas = ExtResource("3_whvh0")
+region = Rect2(7680, 0, 1920, 1920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_115ql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o10pu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rfdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg0nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymv8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv1cq")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30b1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmatt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at166")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0sfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mftfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_483vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ow5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0vv5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o10pu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rfdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg0nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymv8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv1cq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fxgt"]
+radius = 103.0
+height = 528.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l527s"]
+radius = 164.0
+height = 528.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l527s"]
+radius = 880.046
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l527s"]
+size = Vector2(321.875, 528)
+
+[node name="Mage" type="CharacterBody2D" unique_id=1632559621 groups=["Enemy"]]
+collision_layer = 4
+script = ExtResource("1_l527s")
+enemy_type = "Mage"
+attack_distance = 500.0
+attack_sound = ExtResource("2_8rfdh")
+damage_sound = ExtResource("3_bg0nf")
+death_sound = ExtResource("4_ymv8u")
+
+[node name="Frames" type="AnimatedSprite2D" parent="." unique_id=102338033]
+position = Vector2(-34, -157)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_115ql")
+animation = &"attack"
+autoplay = "idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249242713]
+position = Vector2(0, -105)
+shape = SubResource("CapsuleShape2D_8fxgt")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1523257755]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=339021239]
+position = Vector2(0, -105)
+shape = SubResource("CapsuleShape2D_l527s")
+debug_color = Color(0.97321266, 0.12553611, 0.27700707, 0.41960785)
+
+[node name="Detection" type="Area2D" parent="." unique_id=1277583928]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1760102148]
+position = Vector2(0, -76)
+shape = SubResource("CircleShape2D_l527s")
+debug_color = Color(0.6439317, 0.52332973, 3.85046e-07, 0.41960785)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=319751467]
+position = Vector2(-1.9375, -109)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=283182021 groups=["EnemyDamageSource"]]
+shape = SubResource("RectangleShape2D_l527s")
+disabled = true
+debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)

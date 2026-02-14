@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cpcsbgh0abjsy"]
+
+[ext_resource type="Script" uid="uid://o8xfp7se2uq" path="res://scripts/projectile/hand.gd" id="1_gu0lb"]
+[ext_resource type="Texture2D" uid="uid://btw7b5vhxi11u" path="res://assets/sprite/Mage_bolt.png" id="2_gu0lb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rnvi"]
+radius = 8.0
+height = 96.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qydqr"]
+atlas = ExtResource("2_gu0lb")
+region = Rect2(11, 80, 477, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plxao"]
+atlas = ExtResource("2_gu0lb")
+region = Rect2(488, 80, 477, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwnkr"]
+atlas = ExtResource("2_gu0lb")
+region = Rect2(965, 80, 477, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21uhm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qydqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plxao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwnkr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16qm4"]
+radius = 12.0
+height = 202.0
+
+[node name="Hand" type="CharacterBody2D" unique_id=1487298717 groups=["Projectile"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_gu0lb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=662168588]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6rnvi")
+disabled = true
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1391735545]
+position = Vector2(-2, -9)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_21uhm")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=93471675 groups=["Enemy", "EnemyDamageSource", "Projectile"]]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1980892379]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_16qm4")
+debug_color = Color(0.99757606, 0, 0.17293069, 0.41960785)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jrlrtvq61rb1"
+path="res://.godot/imported/An Ode to Fez 2 - Forest Track.mp3-06aa7e7db8b473c4fd464b015feaca68.mp3str"
+
+[deps]
+
+source_file="res://assets/tracks/An Ode to Fez 2 - Forest Track.mp3"
+dest_files=["res://.godot/imported/An Ode to Fez 2 - Forest Track.mp3-06aa7e7db8b473c4fd464b015feaca68.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

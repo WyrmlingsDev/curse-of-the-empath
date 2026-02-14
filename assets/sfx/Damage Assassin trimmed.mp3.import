@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qbwpe3a5ld1k"
+path="res://.godot/imported/Damage Assassin trimmed.mp3-979c0eeacc7f2ff00b26b64f339f0109.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Damage Assassin trimmed.mp3"
+dest_files=["res://.godot/imported/Damage Assassin trimmed.mp3-979c0eeacc7f2ff00b26b64f339f0109.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

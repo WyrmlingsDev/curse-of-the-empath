@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://cpp648uo7nv55"]
+
+[ext_resource type="Script" uid="uid://bu72suy67yyj2" path="res://scripts/enemy/soldier_enemy.gd" id="1_ie1fv"]
+[ext_resource type="Texture2D" uid="uid://bbyqe7e6qth14" path="res://assets/sprite/Soldier-Idle.png" id="2_7h8jw"]
+[ext_resource type="Texture2D" uid="uid://br33nifbx53sa" path="res://assets/sprite/Soldier-Attack.png" id="2_jr4gu"]
+[ext_resource type="AudioStream" uid="uid://dsdv6r6b2e1b0" path="res://assets/sfx/Attack Soldier trimmed.mp3" id="2_vcqx0"]
+[ext_resource type="Texture2D" uid="uid://cd0lg3o4e0cci" path="res://assets/sprite/Soldier-Damage.png" id="3_6ejjj"]
+[ext_resource type="AudioStream" uid="uid://kny8ioligjg6" path="res://assets/sfx/Damage Soldier trimmed.mp3" id="3_sf748"]
+[ext_resource type="Texture2D" uid="uid://d0lkis58y5631" path="res://assets/sprite/Soldier-Walk.png" id="4_6ejjj"]
+[ext_resource type="AudioStream" uid="uid://vgo02d62neyn" path="res://assets/sfx/Death soldier trimmed.mp3" id="4_gpdi0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttvs4"]
+atlas = ExtResource("2_jr4gu")
+region = Rect2(0, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcqx0"]
+atlas = ExtResource("2_jr4gu")
+region = Rect2(1920, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf748"]
+atlas = ExtResource("2_jr4gu")
+region = Rect2(3840, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpdi0"]
+atlas = ExtResource("2_jr4gu")
+region = Rect2(5760, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4jtr"]
+atlas = ExtResource("2_jr4gu")
+region = Rect2(7680, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr4gu"]
+atlas = ExtResource("2_7h8jw")
+region = Rect2(0, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ejjj"]
+atlas = ExtResource("2_7h8jw")
+region = Rect2(1920, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwrui"]
+atlas = ExtResource("2_7h8jw")
+region = Rect2(3840, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlbbg"]
+atlas = ExtResource("4_6ejjj")
+region = Rect2(0, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i1co"]
+atlas = ExtResource("4_6ejjj")
+region = Rect2(1920, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ljel"]
+atlas = ExtResource("4_6ejjj")
+region = Rect2(3840, 0, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf3ej"]
+atlas = ExtResource("4_6ejjj")
+region = Rect2(5760, 0, 1920, 1920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66h5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttvs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcqx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf748")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpdi0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4jtr")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6ejjj")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr4gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ejjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwrui")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlbbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i1co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ljel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf3ej")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nwrui"]
+radius = 56.0
+height = 404.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ejjj"]
+radius = 163.0
+height = 412.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ie1fv"]
+radius = 763.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ejjj"]
+size = Vector2(135.25, 416)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwrui"]
+size = Vector2(126.25, 416)
+
+[node name="Soldier" type="CharacterBody2D" unique_id=1632559621 groups=["Enemy"]]
+collision_layer = 4
+script = ExtResource("1_ie1fv")
+enemy_type = "Soldier"
+attack_distance = 100.0
+attack_sound = ExtResource("2_vcqx0")
+damage_sound = ExtResource("3_sf748")
+death_sound = ExtResource("4_gpdi0")
+
+[node name="Frames" type="AnimatedSprite2D" parent="." unique_id=102338033]
+position = Vector2(-48.000004, -170)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_66h5b")
+animation = &"hurt"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1831148814]
+position = Vector2(0, -54)
+shape = SubResource("CapsuleShape2D_nwrui")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=925646245]
+position = Vector2(0, -54)
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1349618249]
+shape = SubResource("CapsuleShape2D_6ejjj")
+debug_color = Color(0.9354373, 0.24002743, 0.2295115, 0.41960785)
+
+[node name="Detection" type="Area2D" parent="." unique_id=1277583928]
+collision_layer = 4
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1760102148]
+position = Vector2(0, -76)
+shape = SubResource("CircleShape2D_ie1fv")
+debug_color = Color(0.6439317, 0.52332973, 3.85046e-07, 0.41960785)
+
+[node name="HitboxLeft" type="Area2D" parent="." unique_id=1485598350 groups=["Enemy", "EnemyDamageSource"]]
+position = Vector2(-127.125, -61)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxLeft" unique_id=1511369692]
+position = Vector2(58.75, 1)
+shape = SubResource("RectangleShape2D_6ejjj")
+disabled = true
+debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)
+
+[node name="HitboxRight" type="Area2D" parent="." unique_id=1001634345 groups=["Enemy", "EnemyDamageSource"]]
+position = Vector2(128.875, -61)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxRight" unique_id=334033668]
+position = Vector2(-63, 0)
+shape = SubResource("RectangleShape2D_nwrui")
+disabled = true
+debug_color = Color(0.9302377, 0.2354973, 0.31806874, 0.41960785)

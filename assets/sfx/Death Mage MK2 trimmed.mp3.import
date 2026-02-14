@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://e5nlwu4v4kd5"
+path="res://.godot/imported/Death Mage MK2 trimmed.mp3-8ff96b1c5f2cb28fb2e783deb26c16da.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Death Mage MK2 trimmed.mp3"
+dest_files=["res://.godot/imported/Death Mage MK2 trimmed.mp3-8ff96b1c5f2cb28fb2e783deb26c16da.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
